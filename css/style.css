@@ -1,117 +1,41 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* ---------- HEADER & NAV ---------- */
+/* ---------- HEADER & NAV FIXES ---------- */
 
 header {
   padding: 25px;
   text-align: center;
+  color: white; /* Make all header text readable */
 }
 
+/* Subtitle under header */
 .subtitle {
-  opacity: .9;
+  opacity: 0.9;
   margin-top: 5px;
+  color: white; /* Ensure subtitle is readable */
 }
 
-nav {
-  margin-top: 10px;
-}
-
-nav a {
+/* Nav links inside header */
+header nav a {
+  color: white; /* All nav links white */
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
-  opacity: .9;
+  opacity: 0.9;
 }
 
-nav a:hover {
+header nav a:hover {
   text-decoration: underline;
   opacity: 1;
 }
 
-nav a.active {
+/* Highlight the current page */
+header nav a.active {
   text-decoration: underline;
   opacity: 1;
+  color: #ffeb3b; /* optional: current page in bright yellow for visibility */
 }
 
-/* ---------- CONTENT ---------- */
-
-.content {
-  background: white;
-  margin: 25px auto;
-  padding: 25px;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.08);
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #0b2239;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.tag {
-  font-style: italic;
-  color: #333;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-}
-
-/* ---------- PAGE THEME COLORS ---------- */
-
-/* HOME — Navy */
-.theme-home {
-  background: #e9eff5;
-  color: #0b2239;
-}
-.theme-home header {
-  background: #0b2239;
-  color: white;
-}
-.theme-home a { color: #0b2239; }
-
-/* PROJECTS — Teal */
-.theme-projects {
-  background: #e8f5f1;
-  color: #044d36;
-}
-.theme-projects header {
-  background: #0c4a3c;
-  color: white;
-}
-.theme-projects a { color: #044d36; }
-
-/* SKILLS — Purple */
-.theme-skills {
-  background: #f1e9ff;
-  color: #3b1d6f;
-}
-.theme-skills header {
-  background: #3b1d6f;
-  color: white;
-}
-.theme-skills a { color: #3b1d6f; }
-
-/* CONTACT — Orange */
-.theme-contact {
-  background: #fff1e6;
-  color: #8a2b06;
-}
-.theme-contact header {
-  background: #8a2b06;
-  color: white;
-}
-.theme-contact a { color: #8a2b06; }
-
-/* Ensure header nav links remain white */
-header nav a { color: white; }
-header nav a.active { text-decoration: underline; opacity: 1; }
+/* Page-specific themes for header background (keep existing) */
+.theme-home header { background: #0b2239; }
+.theme-projects header { background: #0c4a3c; }
+.theme-skills header { background: #3b1d6f; }
+.theme-contact header { background: #8a2b06; }
