@@ -101,3 +101,36 @@ footer {
 .theme-contact header {
   background: #8a2b06;
 }
+/* ---------- BODY TEXT COLORS PER THEME ---------- */
+
+/* HOME — Navy Theme */
+.theme-home .content {
+  color: #0b2239; /* dark navy text for light blue background */
+}
+
+/* PROJECTS — Teal Theme */
+.theme-projects .content {
+  color: #044d36; /* dark green text for light teal background */
+}
+
+/* SKILLS — Purple Theme */
+.theme-skills .content {
+  color: #3b1d6f; /* dark purple text */
+}
+
+/* CONTACT — Orange Theme */
+.theme-contact .content {
+  color: #8a2b06; /* dark orange/brown text */
+}
+
+/* Ensure links inside content are readable */
+.content a {
+  color: #0b2239;
+  text-decoration: underline;
+}
+
+.theme-home body { background: #e9eff5; color: #0b2239; }
+.theme-projects body { background: #e8f5f1; color: #044d36; }
+.theme-skills body { background: #f1e9ff; color: #3b1d6f; }
+.theme-contact body { background: #fff1e6; color: #8a2b06; }
+
