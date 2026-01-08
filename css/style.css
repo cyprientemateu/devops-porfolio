@@ -1,21 +1,26 @@
-/* ---------- HEADER & NAV FIXES ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
+/* ---------- HEADER & NAV ---------- */
 header {
   padding: 25px;
   text-align: center;
-  color: white; /* Make all header text readable */
+  color: white; /* header text color */
 }
 
-/* Subtitle under header */
-.subtitle {
+header h1, header h2, header h3, header p, header nav a {
+  color: white !important; /* ensure visibility */
+}
+
+header .subtitle {
   opacity: 0.9;
   margin-top: 5px;
-  color: white; /* Ensure subtitle is readable */
+  color: white !important;
 }
 
-/* Nav links inside header */
 header nav a {
-  color: white; /* All nav links white */
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
@@ -24,18 +29,64 @@ header nav a {
 
 header nav a:hover {
   text-decoration: underline;
-  opacity: 1;
+  color: #ffff99;
 }
 
-/* Highlight the current page */
 header nav a.active {
   text-decoration: underline;
   opacity: 1;
-  color: #ffeb3b; /* optional: current page in bright yellow for visibility */
+  color: #ffeb3b !important;
 }
 
-/* Page-specific themes for header background (keep existing) */
-.theme-home header { background: #0b2239; }
-.theme-projects header { background: #0c4a3c; }
-.theme-skills header { background: #3b1d6f; }
-.theme-contact header { background: #8a2b06; }
+/* Page-specific header background colors */
+.theme-home header { background-color: #0b2239; }
+.theme-projects header { background-color: #0c4a3c; }
+.theme-skills header { background-color: #3b1d6f; }
+.theme-contact header { background-color: #8a2b06; }
+
+/* ---------- CONTENT ---------- */
+.content {
+  background: white;
+  margin: 50px auto;        /* center horizontally with top/bottom spacing */
+  padding: 25px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  text-align: center;       /* center text inside content */
+}
+
+/* Center list items */
+.content ul {
+  list-style-position: inside;
+  padding-left: 0;
+  text-align: center;
+}
+
+.content a {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #0b2239;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.tag {
+  font-style: italic;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+/* ---------- PAGE-THEME CONTENT COLORS ---------- */
+.theme-home { background: #e9eff5; color: #0b2239; }
+.theme-projects { background: #e8f5f1; color: #044d36; }
+.theme-skills { background: #f1e9ff; color: #3b1d6f; }
+.theme-contact { background: #fff1e6; color: #8a2b06; }
