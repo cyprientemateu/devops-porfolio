@@ -3,10 +3,9 @@ body {
   margin: 0;
 }
 
-/* ---------- NAV & HEADER ---------- */
+/* ---------- HEADER & NAV ---------- */
 
 header {
-  color: white;
   padding: 25px;
   text-align: center;
 }
@@ -21,7 +20,6 @@ nav {
 }
 
 nav a {
-  color: white;
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
@@ -38,7 +36,7 @@ nav a.active {
   opacity: 1;
 }
 
-/* ---------- CONTENT CARD ---------- */
+/* ---------- CONTENT ---------- */
 
 .content {
   background: white;
@@ -68,69 +66,52 @@ footer {
   padding: 15px;
 }
 
-/* ---------- PAGE COLOR THEMES ---------- */
+/* ---------- PAGE THEME COLORS ---------- */
 
 /* HOME — Navy */
 .theme-home {
   background: #e9eff5;
+  color: #0b2239;
 }
 .theme-home header {
   background: #0b2239;
+  color: white;
 }
+.theme-home a { color: #0b2239; }
 
 /* PROJECTS — Teal */
 .theme-projects {
   background: #e8f5f1;
+  color: #044d36;
 }
 .theme-projects header {
   background: #0c4a3c;
+  color: white;
 }
+.theme-projects a { color: #044d36; }
 
 /* SKILLS — Purple */
 .theme-skills {
   background: #f1e9ff;
+  color: #3b1d6f;
 }
 .theme-skills header {
   background: #3b1d6f;
+  color: white;
 }
+.theme-skills a { color: #3b1d6f; }
 
 /* CONTACT — Orange */
 .theme-contact {
   background: #fff1e6;
+  color: #8a2b06;
 }
 .theme-contact header {
   background: #8a2b06;
+  color: white;
 }
-/* ---------- BODY TEXT COLORS PER THEME ---------- */
+.theme-contact a { color: #8a2b06; }
 
-/* HOME — Navy Theme */
-.theme-home .content {
-  color: #0b2239; /* dark navy text for light blue background */
-}
-
-/* PROJECTS — Teal Theme */
-.theme-projects .content {
-  color: #044d36; /* dark green text for light teal background */
-}
-
-/* SKILLS — Purple Theme */
-.theme-skills .content {
-  color: #3b1d6f; /* dark purple text */
-}
-
-/* CONTACT — Orange Theme */
-.theme-contact .content {
-  color: #8a2b06; /* dark orange/brown text */
-}
-
-/* Ensure links inside content are readable */
-.content a {
-  color: #0b2239;
-  text-decoration: underline;
-}
-
-.theme-home body { background: #e9eff5; color: #0b2239; }
-.theme-projects body { background: #e8f5f1; color: #044d36; }
-.theme-skills body { background: #f1e9ff; color: #3b1d6f; }
-.theme-contact body { background: #fff1e6; color: #8a2b06; }
-
+/* Ensure header nav links remain white */
+header nav a { color: white; }
+header nav a.active { text-decoration: underline; opacity: 1; }
