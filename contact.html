@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Contact | Cyprien Temateu</title>
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Font Awesome Icons (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 
 <body class="theme-contact">
@@ -24,31 +32,71 @@
 
   <ul>
     <li>
+      <i class="fa-solid fa-envelope"></i>
       <strong>Email:</strong>
-      <a href="cctemateu@email.com">cctemateu@email.com</a>
+      <a href="mailto:your@email.com">your@email.com</a>
     </li>
 
     <li>
+      <i class="fa-brands fa-github"></i>
       <strong>GitHub:</strong>
       <a href="https://github.com/cyprientemateu" target="_blank">
-        https://github.com/cyprientemateu
+        github.com/cyprientemateu
       </a>
     </li>
 
     <li>
+      <i class="fa-brands fa-linkedin"></i>
       <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/cctemateu" target="_blank">
-        https://www.linkedin.com/in/cctemateu
-      </a>
-    </li>
-
-    <li>
-      <strong>Resume:</strong>
-      <a href="Cyprien_Temateu_Resume.pdf" target="_blank">
-        Download Resume (PDF)
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+        linkedin.com/in/YOUR-LINKEDIN-USERNAME
       </a>
     </li>
   </ul>
+
+  <!-- Resume Button -->
+  <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i> Download Resume (PDF)
+  </a>
+
+  <hr>
+
+  <!-- Contact Form (No Backend) -->
+  <h2>Send Me a Message</h2>
+
+  <form
+    class="contact-form"
+    action="mailto:your@email.com"
+    method="POST"
+    enctype="text/plain"
+  >
+
+    <input
+      type="text"
+      name="Name"
+      placeholder="Your Name"
+      required
+    />
+
+    <input
+      type="email"
+      name="Email"
+      placeholder="Your Email"
+      required
+    />
+
+    <textarea
+      name="Message"
+      rows="5"
+      placeholder="Your Message"
+      required
+    ></textarea>
+
+    <button type="submit">
+      <i class="fa-solid fa-paper-plane"></i> Send Message
+    </button>
+
+  </form>
 
 </section>
 

@@ -42,62 +42,95 @@ header nav a.active {
   color: #ffeb3b !important;
 }
 
-/* ---------- PAGE-SPECIFIC HEADER COLORS ---------- */
+/* ---------- PAGE HEADER COLORS ---------- */
 .theme-home header { background-color: #0b2239; }
 .theme-projects header { background-color: #0c4a3c; }
 .theme-skills header { background-color: #3b1d6f; }
 .theme-contact header { background-color: #8a2b06; }
 
-/* ---------- CONTENT (CENTERED CONTAINER) ---------- */
+/* ---------- CONTENT ---------- */
 .content {
   background: white;
-  margin: 50px auto;           /* centers container */
+  margin: 50px auto;
   padding: 25px;
   max-width: 900px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  text-align: center;          /* default: centered text */
-}
-
-/* ---------- TITLES & TAGLINES ---------- */
-.content h2,
-.content h3,
-.content .tag {
   text-align: center;
 }
 
-/* ---------- BULLET POINTS (LEFT-ALIGNED) ---------- */
+/* ---------- LISTS ---------- */
 .content ul {
-  list-style-position: outside;
-  padding-left: 40px;
-  text-align: left;            /* IMPORTANT FIX */
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  max-width: 600px;
   margin: 20px auto;
-  max-width: 700px;            /* keeps bullets readable */
 }
 
 .content li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
-/* ---------- TECHNOLOGY LINE (CENTERED) ---------- */
-.content p strong {
+.content li i {
+  margin-right: 8px;
+  color: #8a2b06;
+}
+
+/* ---------- RESUME BUTTON ---------- */
+.resume-button {
   display: inline-block;
-  text-align: center;
-}
-
-/* ---------- LINKS & BUTTON ---------- */
-.content a {
-  text-decoration: underline;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #0b2239;
+  margin: 20px 0;
+  padding: 12px 20px;
+  background-color: #8a2b06;
   color: white;
-  border-radius: 6px;
   text-decoration: none;
-  margin-top: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.resume-button i {
+  margin-right: 8px;
+}
+
+.resume-button:hover {
+  background-color: #a33a0a;
+}
+
+/* ---------- CONTACT FORM ---------- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form button {
+  background-color: #8a2b06;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.contact-form button i {
+  margin-right: 6px;
+}
+
+.contact-form button:hover {
+  background-color: #a33a0a;
 }
 
 /* ---------- FOOTER ---------- */
@@ -106,7 +139,7 @@ footer {
   padding: 15px;
 }
 
-/* ---------- PAGE BACKGROUND COLORS ---------- */
+/* ---------- PAGE BACKGROUNDS ---------- */
 .theme-home {
   background: #e9eff5;
   color: #0b2239;
