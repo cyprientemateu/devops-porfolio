@@ -1,3 +1,4 @@
+/* ---------- GLOBAL ---------- */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -7,17 +8,20 @@ body {
 header {
   padding: 25px;
   text-align: center;
-  color: white; /* header text color */
+  color: white;
 }
 
-header h1, header h2, header h3, header p, header nav a {
-  color: white !important; /* ensure visibility */
+header h1,
+header h2,
+header h3,
+header p,
+header nav a {
+  color: white !important;
 }
 
-header .subtitle {
+.subtitle {
   opacity: 0.9;
   margin-top: 5px;
-  color: white !important;
 }
 
 header nav a {
@@ -38,30 +42,50 @@ header nav a.active {
   color: #ffeb3b !important;
 }
 
-/* Page-specific header background colors */
+/* ---------- PAGE-SPECIFIC HEADER COLORS ---------- */
 .theme-home header { background-color: #0b2239; }
 .theme-projects header { background-color: #0c4a3c; }
 .theme-skills header { background-color: #3b1d6f; }
 .theme-contact header { background-color: #8a2b06; }
 
-/* ---------- CONTENT ---------- */
+/* ---------- CONTENT (CENTERED CONTAINER) ---------- */
 .content {
   background: white;
-  margin: 50px auto;        /* center horizontally with top/bottom spacing */
+  margin: 50px auto;           /* centers container */
   padding: 25px;
   max-width: 900px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  text-align: center;       /* center text inside content */
+  text-align: center;          /* default: centered text */
 }
 
-/* Center list items */
-.content ul {
-  list-style-position: inside;
-  padding-left: 0;
+/* ---------- TITLES & TAGLINES ---------- */
+.content h2,
+.content h3,
+.content .tag {
   text-align: center;
 }
 
+/* ---------- BULLET POINTS (LEFT-ALIGNED) ---------- */
+.content ul {
+  list-style-position: outside;
+  padding-left: 40px;
+  text-align: left;            /* IMPORTANT FIX */
+  margin: 20px auto;
+  max-width: 700px;            /* keeps bullets readable */
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+/* ---------- TECHNOLOGY LINE (CENTERED) ---------- */
+.content p strong {
+  display: inline-block;
+  text-align: center;
+}
+
+/* ---------- LINKS & BUTTON ---------- */
 .content a {
   text-decoration: underline;
 }
@@ -73,20 +97,32 @@ header nav a.active {
   color: white;
   border-radius: 6px;
   text-decoration: none;
+  margin-top: 15px;
 }
 
-.tag {
-  font-style: italic;
-  color: #333;
-}
-
+/* ---------- FOOTER ---------- */
 footer {
   text-align: center;
   padding: 15px;
 }
 
-/* ---------- PAGE-THEME CONTENT COLORS ---------- */
-.theme-home { background: #e9eff5; color: #0b2239; }
-.theme-projects { background: #e8f5f1; color: #044d36; }
-.theme-skills { background: #f1e9ff; color: #3b1d6f; }
-.theme-contact { background: #fff1e6; color: #8a2b06; }
+/* ---------- PAGE BACKGROUND COLORS ---------- */
+.theme-home {
+  background: #e9eff5;
+  color: #0b2239;
+}
+
+.theme-projects {
+  background: #e8f5f1;
+  color: #044d36;
+}
+
+.theme-skills {
+  background: #f1e9ff;
+  color: #3b1d6f;
+}
+
+.theme-contact {
+  background: #fff1e6;
+  color: #8a2b06;
+}
