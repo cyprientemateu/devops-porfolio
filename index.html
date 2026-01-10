@@ -1,184 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevOps Engineer • Cyprien Temateu</title>
+  <title>Home | Cyprien Temateu</title>
   <meta name="description" content="DevOps Engineer specializing in AWS, Kubernetes, Terraform, CI/CD automation, and cloud infrastructure.">
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Uses SAME CSS as Skills page -->
 </head>
-<body>
 
-<!-- Header -->
-<header class="header-nav">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">Cyprien Temateu</a>
-    <nav class="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="skills.html" class="nav-link">Skills</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    <button class="mobile-menu-btn">☰</button>
-  </div>
+<body class="theme-home">
+
+<button id="themeToggle" class="theme-toggle">🌙</button>
+
+<header>
+  <h1>Cyprien Temateu</h1>
+  <p class="subtitle">DevOps Engineer • Cloud • Automation • Security</p>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<!-- Hero -->
-<section class="hero-section">
-  <div class="hero-container">
-    <h1 class="hero-title">DevOps Engineer</h1>
-    <p class="hero-subtitle">
-      Cloud • Kubernetes • Infrastructure as Code • CI/CD Automation • DevSecOps
-    </p>
-  </div>
-</section>
-
-<!-- Main -->
-<main class="main-content">
+<main class="content">
 
   <!-- About -->
-  <section class="skills-section">
-    <div class="section-header">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">
-        DevOps-focused engineer with hands-on experience designing, automating, and operating cloud infrastructure
-      </p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">👨‍💻</span>
-          <h3 class="skill-category-title">Professional Summary</h3>
-        </div>
-        <p>
-          I am a DevOps Engineer with strong experience in AWS, Kubernetes, CI/CD pipelines,
-          and Infrastructure as Code. I focus on building secure, scalable, and automated
-          systems that improve deployment speed, reliability, and operational visibility.
-        </p>
-      </div>
-    </div>
+  <section>
+    <h2>👨‍💻 About Me</h2>
+    <p>
+      I am a DevOps Engineer with hands-on experience designing, automating, and operating
+      secure and scalable cloud infrastructure. I specialize in AWS, Kubernetes,
+      CI/CD pipelines, and Infrastructure as Code to improve deployment speed,
+      reliability, and operational visibility.
+    </p>
   </section>
 
   <!-- Core Expertise -->
-  <section class="skills-section">
-    <div class="section-header">
-      <h2 class="section-title">Core Expertise</h2>
-      <p class="section-subtitle">Key areas where I deliver the most value</p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">☁️</span>
-          <h3 class="skill-category-title">Cloud & Infrastructure</h3>
-        </div>
-        <ul>
-          <li>AWS architecture (EC2, S3, IAM, VPC, Route53)</li>
-          <li>Terraform infrastructure provisioning</li>
-          <li>High availability and fault-tolerant designs</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">🐳</span>
-          <h3 class="skill-category-title">Containers & Kubernetes</h3>
-        </div>
-        <ul>
-          <li>Dockerized applications</li>
-          <li>Kubernetes cluster operations</li>
-          <li>GitOps workflows with ArgoCD</li>
-        </ul>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">🚀</span>
-          <h3 class="skill-category-title">CI/CD & Automation</h3>
-        </div>
-        <ul>
-          <li>Jenkins & GitHub Actions pipelines</li>
-          <li>Automated testing & deployments</li>
-          <li>Zero-downtime delivery strategies</li>
-        </ul>
-      </div>
-    </div>
+  <section>
+    <h2>🚀 Core Expertise</h2>
+    <ul class="left-list">
+      <li>Cloud infrastructure on AWS (EC2, VPC, IAM, S3, Route 53)</li>
+      <li>CI/CD automation using Jenkins and GitHub Actions</li>
+      <li>Infrastructure as Code with Terraform and Ansible</li>
+      <li>Containerization and orchestration with Docker and Kubernetes</li>
+      <li>GitOps workflows using ArgoCD</li>
+    </ul>
   </section>
 
   <!-- Featured Projects -->
-  <section class="skills-section">
-    <div class="section-header">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Hands-on DevOps implementations</p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">📦</span>
-          <h3 class="skill-category-title">CI/CD Pipeline Automation</h3>
-        </div>
-        <p>
-          Built a complete CI/CD pipeline using Jenkins, GitHub Actions, Docker, and AWS EC2
-          to automate build, test, and deployment workflows.
-        </p>
-        <a href="projects.html" class="cert-badge">View Project</a>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">⚙️</span>
-          <h3 class="skill-category-title">Infrastructure as Code</h3>
-        </div>
-        <p>
-          Provisioned AWS infrastructure using Terraform modules with security best practices,
-          remote state management, and reusable configurations.
-        </p>
-        <a href="projects.html" class="cert-badge">View Project</a>
-      </div>
-    </div>
+  <section>
+    <h2>📦 Featured Projects</h2>
+    <ul class="left-list">
+      <li>
+        <strong>CI/CD Pipeline Automation:</strong>
+        End-to-end pipeline using Jenkins, GitHub Actions, Docker, and AWS EC2
+      </li>
+      <li>
+        <strong>Infrastructure as Code:</strong>
+        AWS infrastructure provisioned with Terraform modules and security best practices
+      </li>
+    </ul>
+    <a href="projects.html" class="cert-badge">View All Projects</a>
   </section>
 
   <!-- Certifications Preview -->
-  <section class="certifications-section">
-    <div class="certifications-container">
-      <h2 class="certifications-title">Certifications</h2>
-      <div class="certifications-grid">
-        <div class="cert-item">
-          <h3 class="cert-title">Certified Kubernetes Administrator (CKA)</h3>
-          <p class="cert-description">Linux Foundation</p>
-          <span class="cert-badge">Achieved</span>
-        </div>
-
-        <div class="cert-item">
-          <h3 class="cert-title">AWS Solutions Architect – Associate</h3>
-          <p class="cert-description">Amazon Web Services</p>
-          <span class="cert-badge">Achieved</span>
-        </div>
-      </div>
-      <br>
-      <a href="skills.html" class="cert-badge">View All Skills & Certifications</a>
-    </div>
+  <section>
+    <h2>🎖️ Certifications</h2>
+    <ul class="left-list">
+      <li>Certified Kubernetes Administrator (CKA) – Linux Foundation</li>
+      <li>AWS Solutions Architect – Associate</li>
+    </ul>
+    <a href="skills.html" class="cert-badge">View All Skills & Certifications</a>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <h3 class="footer-title">Connect with Me</h3>
-    <div class="social-links">
-      <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
-      <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
-      <a href="https://linkedin.com/in/cctemateu/" target="_blank" class="social-link">LinkedIn</a>
-    </div>
-    <p class="footer-text">&copy; 2026 Cyprien Temateu | DevOps Engineer</p>
+<footer class="site-footer">
+  <h3>Connect with Me</h3>
+  <div class="footer-links">
+    <a class="footer-btn github" href="https://github.com/cyprientemateu" target="_blank">GitHub</a>
+    <a class="footer-btn docker" href="https://hub.docker.com/u/cyprientemateu" target="_blank">DockerHub</a>
+    <a class="footer-btn linkedin" href="https://www.linkedin.com/in/cctemateu/" target="_blank">LinkedIn</a>
   </div>
+  <p>© 2026 Cyprien Temateu | DevOps Portfolio</p>
 </footer>
+
+<button id="scrollTopBtn">↑</button>
+<script src="js/main.js"></script>
 
 </body>
 </html>
