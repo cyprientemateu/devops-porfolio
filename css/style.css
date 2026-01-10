@@ -85,6 +85,49 @@ header nav a.active {
   opacity: 0.85;
 }
 
+/* ================= SKILLS GRID ================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.skill-block {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.skill-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.skill-block h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.skill-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.skill-block li {
+  margin-bottom: 8px;
+}
+
+.skill-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
 /* ================= CONTACT PAGE ================= */
 .contact-list {
   list-style: none;
@@ -203,6 +246,12 @@ header nav a.active {
 .github { background: #24292e; }
 .docker { background: #0db7ed; }
 .linkedin { background: #0077b5; }
+
+.footer-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
 
 /* ================= SCROLL TO TOP ================= */
 #scrollTopBtn {
