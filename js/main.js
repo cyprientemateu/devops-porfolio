@@ -23,3 +23,33 @@ window.addEventListener("scroll", () => {
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+// ================= THEME TOGGLE =================
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+
+// ================= SCROLL TO TOP =================
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = () => {
+  scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+scrollTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+// ================= SKILL BLOCK FADE-IN =================
+const skillBlocks = document.querySelectorAll(".skill-block");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+skillBlocks.forEach(block => observer.observe(block));
