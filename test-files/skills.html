@@ -1,47 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Skills & Tools | Cyprien Temateu</title>
+  <title>Skills | Cyprien Temateu</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="theme-skills">
 
+<button id="themeToggle" class="theme-toggle">🌙</button>
+
 <header>
-  <h1>Skills & Technologies</h1>
+  <h1>Skills</h1>
+  <p class="subtitle">DevOps • Cloud • Automation • Security</p>
   <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
-    <a class="active" href="skills.html">Skills</a>
+    <a href="skills.html" class="active">Skills</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="content">
+<main class="content">
 
-  <h2>Core DevOps Skills</h2>
-  <ul>
-    <li>CI/CD — Jenkins, GitHub Actions</li>
-    <li>Cloud — AWS (EC2, VPC, CloudWatch)</li>
-    <li>Containers — Docker, Kubernetes</li>
-    <li>Infrastructure as Code — Terraform</li>
-    <li>Monitoring — CloudWatch</li>
-    <li>Version Control — Git & GitHub</li>
-  </ul>
+  <section>
+    <h2>⚙️ DevOps & CI/CD</h2>
+    <ul class="left-list">
+      <li>Jenkins, GitHub Actions</li>
+      <li>CI/CD pipeline automation</li>
+      <li>Artifact & version control</li>
+    </ul>
+  </section>
 
-  <h2>Other Tools & Experience</h2>
-  <ul>
-    <li>Linux System Administration</li>
-    <li>Networking & Security Basics</li>
-    <li>Shell Scripting — Bash, YAML, Groovy</li>
-  </ul>
+  <section>
+    <h2>☁️ Cloud & Infrastructure</h2>
+    <ul class="left-list">
+      <li>AWS (EC2, VPC, EKS, IAM, S3, Route 53)</li>
+      <li>Terraform & Infrastructure as Code</li>
+      <li>Ansible configuration management</li>
+    </ul>
+  </section>
 
-</section>
+  <section>
+    <h2>🐳 Containers & Orchestration</h2>
+    <ul class="left-list">
+      <li>Docker & DockerHub</li>
+      <li>Kubernetes & Amazon EKS</li>
+      <li>ArgoCD (GitOps)</li>
+    </ul>
+  </section>
 
-<footer>
-  <p>© 2026 Cyprien Carlos Temateu</p>
+  <section>
+    <h2>🔐 Monitoring & Security</h2>
+    <ul class="left-list">
+      <li>AWS CloudWatch</li>
+      <li>IAM & least privilege</li>
+      <li>DevSecOps fundamentals</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <h3>Connect with Me</h3>
+  <div class="footer-links">
+    <a class="footer-btn github" href="https://github.com/cyprientemateu" target="_blank">GitHub</a>
+    <a class="footer-btn docker" href="https://hub.docker.com/u/cyprientemateu" target="_blank">DockerHub</a>
+    <a class="footer-btn linkedin" href="https://www.linkedin.com/in/cctemateu/" target="_blank">LinkedIn</a>
+  </div>
+  <p>© 2026 Cyprien Temateu | DevOps Portfolio</p>
 </footer>
+
+<button id="scrollTopBtn">↑</button>
+<script src="js/main.js"></script>
 
 </body>
 </html>
