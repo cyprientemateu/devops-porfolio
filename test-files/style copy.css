@@ -1,0 +1,161 @@
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* ---------- HEADER & NAV ---------- */
+header {
+  padding: 25px;
+  text-align: center;
+  color: white;
+}
+
+header h1,
+header h2,
+header h3,
+header p,
+header nav a {
+  color: white !important;
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: #ffff99;
+}
+
+header nav a.active {
+  text-decoration: underline;
+  opacity: 1;
+  color: #ffeb3b !important;
+}
+
+/* ---------- PAGE HEADER COLORS ---------- */
+.theme-home header { background-color: #0b2239; }
+.theme-projects header { background-color: #0c4a3c; }
+.theme-skills header { background-color: #3b1d6f; }
+.theme-contact header { background-color: #8a2b06; }
+
+/* ---------- CONTENT ---------- */
+.content {
+  background: white;
+  margin: 50px auto;
+  padding: 25px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  text-align: center;
+}
+
+/* ---------- LISTS ---------- */
+.content ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.content li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.content li i {
+  margin-right: 8px;
+  color: #8a2b06;
+}
+
+/* ---------- RESUME BUTTON ---------- */
+.resume-button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 20px;
+  background-color: #8a2b06;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.resume-button i {
+  margin-right: 8px;
+}
+
+.resume-button:hover {
+  background-color: #a33a0a;
+}
+
+/* ---------- CONTACT FORM ---------- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form button {
+  background-color: #8a2b06;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.contact-form button i {
+  margin-right: 6px;
+}
+
+.contact-form button:hover {
+  background-color: #a33a0a;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+/* ---------- PAGE BACKGROUNDS ---------- */
+.theme-home {
+  background: #e9eff5;
+  color: #0b2239;
+}
+
+.theme-projects {
+  background: #e8f5f1;
+  color: #044d36;
+}
+
+.theme-skills {
+  background: #f1e9ff;
+  color: #3b1d6f;
+}
+
+.theme-contact {
+  background: #fff1e6;
+  color: #8a2b06;
+}

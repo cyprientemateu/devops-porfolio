@@ -1,0 +1,128 @@
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* ---------- HEADER & NAV ---------- */
+header {
+  padding: 25px;
+  text-align: center;
+  color: white;
+}
+
+header h1,
+header h2,
+header h3,
+header p,
+header nav a {
+  color: white !important;
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: #ffff99;
+}
+
+header nav a.active {
+  text-decoration: underline;
+  opacity: 1;
+  color: #ffeb3b !important;
+}
+
+/* ---------- PAGE-SPECIFIC HEADER COLORS ---------- */
+.theme-home header { background-color: #0b2239; }
+.theme-projects header { background-color: #0c4a3c; }
+.theme-skills header { background-color: #3b1d6f; }
+.theme-contact header { background-color: #8a2b06; }
+
+/* ---------- CONTENT (CENTERED CONTAINER) ---------- */
+.content {
+  background: white;
+  margin: 50px auto;           /* centers container */
+  padding: 25px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  text-align: center;          /* default: centered text */
+}
+
+/* ---------- TITLES & TAGLINES ---------- */
+.content h2,
+.content h3,
+.content .tag {
+  text-align: center;
+}
+
+/* ---------- BULLET POINTS (LEFT-ALIGNED) ---------- */
+.content ul {
+  list-style-position: outside;
+  padding-left: 40px;
+  text-align: left;            /* IMPORTANT FIX */
+  margin: 20px auto;
+  max-width: 700px;            /* keeps bullets readable */
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+/* ---------- TECHNOLOGY LINE (CENTERED) ---------- */
+.content p strong {
+  display: inline-block;
+  text-align: center;
+}
+
+/* ---------- LINKS & BUTTON ---------- */
+.content a {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #0b2239;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+/* ---------- PAGE BACKGROUND COLORS ---------- */
+.theme-home {
+  background: #e9eff5;
+  color: #0b2239;
+}
+
+.theme-projects {
+  background: #e8f5f1;
+  color: #044d36;
+}
+
+.theme-skills {
+  background: #f1e9ff;
+  color: #3b1d6f;
+}
+
+.theme-contact {
+  background: #fff1e6;
+  color: #8a2b06;
+}

@@ -1,62 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DevOps Projects | Cyprien Temateu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Cyprien Temateu</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="theme-projects">
+<body class="theme-projects light">
 
-<header>
-  <h1>DevOps Projects</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a class="active" href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- THEME TOGGLE -->
+  <button id="themeToggle" aria-label="Toggle Dark Mode">
+    🌙
+  </button>
 
-<section class="content">
+  <!-- HEADER -->
+  <header>
+    <h1>Projects</h1>
+    <p class="subtitle">
+      Real-World DevOps • Cloud • Automation • Infrastructure as Code
+    </p>
 
-  <h2>CI/CD Pipeline — Jenkins • GitHub • Docker • Ansible</h2>
-  <p class="tag">Automation • Configuration Management</p>
-  <ul>
-    <li>Built automated pipeline triggered on GitHub commits</li>
-    <li>Dockerized application and deployed to EC2</li>
-    <li>Used Ansible for provisioning & configuration</li>
-    <li>Configured Nginx as reverse proxy</li>
-  </ul>
-  <p><strong>Technologies:</strong> Jenkins, GitHub Actions, Docker, EC2, Ansible, Nginx</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <hr>
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-  <h2>Kubernetes Deployment with CloudWatch Monitoring</h2>
-  <p class="tag">Kubernetes • Observability</p>
-  <ul>
-    <li>Deployed multi-component application to Kubernetes</li>
-    <li>Configured autoscaling and health checks</li>
-    <li>Used AWS CloudWatch for monitoring & metrics</li>
-  </ul>
-  <p><strong>Technologies:</strong> Kubernetes, AWS CloudWatch, AWS EKS</p>
+    <!-- PROJECT 1 -->
+    <section>
+      <h2>🔧 Auto-Decommission AWS Resources</h2>
+      <p><strong>Apr 2025 – Sep 2025</strong></p>
 
-  <hr>
+      <p>
+        Automated AWS cost optimization solution that identifies idle EC2 and RDS
+        resources and safely stops or terminates them based on configurable CPU,
+        network, and idle-time thresholds.
+      </p>
 
-  <h2>Infrastructure as Code with Terraform</h2>
-  <p class="tag">Terraform • AWS • Networking</p>
-  <ul>
-    <li>Provisioned EC2 instances & networking resources</li>
-    <li>Implemented reusable Terraform modules</li>
-    <li>Managed state & environment isolation</li>
-  </ul>
-  <p><strong>Technologies:</strong> Terraform, AWS, Linux</p>
+      <ul class="left-list">
+        <li>Serverless automation using AWS Lambda and Python</li>
+        <li>24-hour scheduled evaluations using CloudWatch metrics</li>
+        <li>Safe <strong>DRY_RUN</strong> mode for non-destructive testing</li>
+        <li>Email notifications via SNS for all actions taken</li>
+        <li>Fully reproducible infrastructure using Terraform</li>
+      </ul>
 
-</section>
+      <p class="tech">
+        <strong>Technologies:</strong> AWS Lambda, Terraform, Python, CloudWatch,
+        SNS, Amazon S3
+      </p>
 
-<footer>
-  <p>© 2026 Cyprien Carlos Temateu</p>
-</footer>
+      <p>
+        🔗 <a href="https://github.com/cyprientemateu/auto-decom-project" target="_blank">
+          GitHub Repository
+        </a>
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- PROJECT 2 -->
+    <section>
+      <h2>☁️ Infrastructure Automation with Terraform (POC)</h2>
+      <p><strong>Oct 2024 – Jan 2025</strong></p>
+
+      <p>
+        Proof-of-concept project demonstrating automated provisioning of secure,
+        scalable AWS infrastructure using Terraform.
+      </p>
+
+      <ul class="left-list">
+        <li>Provisioned EC2 instances behind an AWS Load Balancer</li>
+        <li>Implemented SSL/TLS security using AWS Certificate Manager (ACM)</li>
+        <li>Configured Route 53 for DNS routing</li>
+        <li>Used Target Groups with health checks for traffic routing</li>
+        <li>Achieved high availability through automated infrastructure design</li>
+      </ul>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Terraform, AWS ACM, Load Balancer,
+        Route 53, EC2, Target Groups
+      </p>
+
+      <p>
+        🔗 <a href="https://github.com/cyprientemateu/terraform-test/blob/main/modules/host-base-routing/README.md" target="_blank">
+          GitHub Repository
+        </a>
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- PROJECT 3 -->
+    <section>
+      <h2>🌐 Kubernetes Deployment & Automation with EKS and ArgoCD</h2>
+      <p><strong>Oct 2024 – Dec 2024</strong></p>
+
+      <p>
+        Designed and automated a secure Kubernetes platform on Amazon EKS using
+        GitOps practices for continuous deployment and infrastructure management.
+      </p>
+
+      <ul class="left-list">
+        <li>Built a private-subnet EKS cluster for enhanced security</li>
+        <li>Automated deployments using ArgoCD with GitHub integration</li>
+        <li>Provisioned VPC, subnets, security groups, and EKS using Terraform</li>
+        <li>Optimized networking with NAT Gateway and Elastic IPs</li>
+        <li>Monitored cluster health and logs with AWS CloudWatch</li>
+      </ul>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Amazon EKS, Kubernetes, ArgoCD,
+        Terraform, GitHub, AWS CloudWatch
+      </p>
+
+      <p>
+        🔗 <a href="https://github.com/cyprientemateu/terraform1.git" target="_blank">
+          GitHub Repository
+        </a>
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- PROJECT 4 -->
+    <section>
+      <h2>📡 VLSM Network Design & Implementation</h2>
+      <p><strong>Nov 2024 – Dec 2024</strong></p>
+
+      <p>
+        Designed and implemented an optimized Variable Length Subnet Mask (VLSM)
+        addressing scheme for a simulated enterprise network using Cisco Packet Tracer.
+      </p>
+
+      <ul class="left-list">
+        <li>Created efficient subnet allocations using 10.1.1.0/24</li>
+        <li>Configured routers, switches, and end devices</li>
+        <li>Designed contiguous subnetting to eliminate address wastage</li>
+        <li>Verified full network connectivity and routing</li>
+        <li>Troubleshot routing and connectivity issues</li>
+      </ul>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Cisco Packet Tracer, VLSM, IP Subnetting,
+        Routers, Switches
+      </p>
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollTopBtn" title="Back to top">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <h3>Connect with Me</h3>
+
+    <div class="footer-links">
+      <a href="https://github.com/cyprientemateu" target="_blank" class="footer-btn github">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.17c-3.2.7-3.87-1.38-3.87-1.38-.52-1.3-1.28-1.65-1.28-1.65-1.05-.7.08-.68.08-.68 1.16.08 1.77 1.2 1.77 1.2 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.19-3.11-.12-.3-.52-1.5.11-3.12 0 0 .97-.31 3.18 1.19a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.62.23 2.82.11 3.12.74.81 1.18 1.85 1.18 3.11 0 4.43-2.7 5.4-5.27 5.69.41.35.78 1.05.78 2.12v3.14c0 .3.21.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        GitHub
+      </a>
+
+      <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="footer-btn docker">
+        🐳 DockerHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/cyprientemateu/" target="_blank" class="footer-btn linkedin">
+        in LinkedIn
+      </a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Cyprien Temateu | DevOps Portfolio
+    </p>
+  </footer>
+
+  <!-- SHARED SCRIPT -->
+  <script>
+    // Scroll to top
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // Dark / Light Mode
+    const toggle = document.getElementById("themeToggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    };
+  </script>
 
 </body>
 </html>
