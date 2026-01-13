@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home • Cyprien Temateu</title>
-  <meta name="description" content="Welcome to Cyprien Temateu's DevOps Portfolio. Explore projects, skills, and certifications.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="DevOps portfolio of Cyprien Temateu, showcasing skills, projects, and experience.">
+  <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -25,47 +25,37 @@
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <h1 class="hero-title">Welcome to My DevOps Portfolio</h1>
-  <p class="hero-subtitle">Explore my projects, technical skills, certifications, and hands-on experience in DevOps, cloud, and automation.</p>
+  <div class="hero-container">
+    <h1 class="hero-title">Welcome to My DevOps Portfolio</h1>
+    <p class="hero-subtitle">I’m Cyprien Temateu, specializing in cloud infrastructure, CI/CD, containers, and DevSecOps.</p>
+  </div>
 </section>
 
 <main class="main-content">
   <section class="skills-section">
     <div class="section-header">
       <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">I am a DevOps Engineer passionate about cloud automation, CI/CD pipelines, container orchestration, and security.</p>
+      <p class="section-subtitle">I build reliable and automated DevOps solutions, from cloud deployments to monitoring and security.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-category">
         <div class="skill-category-header">
           <span class="skill-category-icon">⚙️</span>
-          <h3 class="skill-category-title">Expertise</h3>
+          <h3 class="skill-category-title">DevOps Focus</h3>
         </div>
-        <ul>
-          <li>AWS Cloud Infrastructure (EC2, S3, IAM, VPC, Route53)</li>
-          <li>CI/CD Automation (Jenkins, GitHub Actions)</li>
-          <li>Infrastructure as Code (Terraform, Ansible)</li>
-          <li>Containers & Orchestration (Docker, Kubernetes, ArgoCD)</li>
-          <li>Monitoring & Security (CloudWatch, DevSecOps basics)</li>
-        </ul>
+        <div class="skill-item"><span class="skill-name">CI/CD Pipelines</span></div>
+        <div class="skill-item"><span class="skill-name">Automation & Scripting</span></div>
+        <div class="skill-item"><span class="skill-name">Cloud Infrastructure</span></div>
       </div>
 
       <div class="skill-category">
         <div class="skill-category-header">
           <span class="skill-category-icon">📂</span>
-          <h3 class="skill-category-title">Portfolio</h3>
+          <h3 class="skill-category-title">Portfolio Highlights</h3>
         </div>
-        <p>Check out real-world projects that demonstrate cloud infrastructure automation, Kubernetes deployments, and DevOps best practices.</p>
-        <a href="projects.html" class="project-link">View Projects</a>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">🏆</span>
-          <h3 class="skill-category-title">Certifications</h3>
-        </div>
-        <p>Industry-recognized certifications in Kubernetes, AWS, Terraform, Agile, and network fundamentals.</p>
-        <a href="skills.html" class="project-link">View Skills & Certifications</a>
+        <div class="skill-item"><span class="skill-name">AWS & Terraform Deployments</span></div>
+        <div class="skill-item"><span class="skill-name">Docker & Kubernetes Projects</span></div>
+        <div class="skill-item"><span class="skill-name">GitHub Actions CI/CD</span></div>
       </div>
     </div>
   </section>
@@ -83,6 +73,11 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebar-overlay').classList.toggle('active');}
+function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebar-overlay').classList.remove('active');}
+document.querySelectorAll('.sidebar-nav-item').forEach(link=>{link.addEventListener('click',closeSidebar);});
+</script>
+
 </body>
 </html>
