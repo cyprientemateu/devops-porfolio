@@ -215,7 +215,7 @@
         <span class="skill-category-icon">🔧</span>
         <h3 class="skill-category-title">Auto-Decommission AWS Resources</h3>
       </div>
-      <p>
+      <p> class="hero-subtitle">
         Automated AWS cost-optimization system that detects idle EC2 and RDS
         resources and safely stops or terminates them.
       </p>
@@ -236,7 +236,7 @@
         <span class="skill-category-icon">☁️</span>
         <h3 class="skill-category-title">Infrastructure Automation with Terraform</h3>
       </div>
-      <p>
+      <p> class="hero-subtitle">
         Proof-of-concept demonstrating secure, scalable AWS infrastructure provisioning.
       </p>
       <ul>
@@ -255,7 +255,7 @@
         <span class="skill-category-icon">🌐</span>
         <h3 class="skill-category-title">Kubernetes Platform with EKS & ArgoCD</h3>
       </div>
-      <p>
+      <p> class="hero-subtitle">
         Secure Kubernetes platform built using GitOps practices.
       </p>
       <ul>
@@ -274,7 +274,7 @@
         <span class="skill-category-icon">📡</span>
         <h3 class="skill-category-title">VLSM Network Design</h3>
       </div>
-      <p>
+      <p> class="hero-subtitle">
         Designed and implemented optimized VLSM subnetting for an enterprise network.
       </p>
       <ul>
@@ -291,14 +291,22 @@
 </main>
 
 <footer class="footer">
-  <h3>Connect with Me</h3>
-  <div class="social-links">
-    <a href="https://github.com/cyprientemateu" class="social-link" target="_blank">GitHub</a>
-    <a href="https://hub.docker.com/u/cyprientemateu" class="social-link" target="_blank">DockerHub</a>
-    <a href="https://linkedin.com/in/cctemateu/" class="social-link" target="_blank">LinkedIn</a>
-  </div>
-  <p>&copy; 2026 Cyprien Temateu | DevOps Portfolio</p>
-</footer>
+    <div class="footer-content">
+      <h3 class="footer-title">Connect with Me</h3>
+      <div class="social-links">
+        <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
+        <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
+        <a href="https://linkedin.com/in/cctemateu/" target="_blank" class="social-link">LinkedIn</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Cyprien Temateu | DevOps Portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebar-overlay').classList.toggle('active');}
+    function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebar-overlay').classList.remove('active');}
+    document.querySelectorAll('.sidebar-nav-item').forEach(link=>{link.addEventListener('click',closeSidebar);});
+  </script>
 
 </body>
 </html>
