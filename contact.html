@@ -1,169 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contact | Cyprien Temateu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact • Cyprien Temateu</title>
+  <meta name="description" content="Contact DevOps Engineer Cyprien Temateu">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 </head>
 
-<body class="theme-contact light">
+<body>
 
-  <!-- THEME TOGGLE -->
-  <button id="themeToggle" aria-label="Toggle Dark Mode">
-    🌙
-  </button>
-
-  <!-- HEADER -->
-  <header>
-    <h1>Contact</h1>
-    <p class="subtitle">Let’s Connect • Collaboration • Opportunities</p>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a class="active" href="contact.html">Contact</a>
+<!-- HEADER -->
+<header class="header-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Cyprien Temateu</a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </nav>
-  </header>
+    <button class="mobile-menu-btn">☰</button>
+  </div>
+</header>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-container">
+    <h1 class="hero-title">Get in Touch</h1>
+    <p class="hero-subtitle">
+      Collaboration • DevOps Opportunities • Cloud Engineering Roles
+    </p>
+  </div>
+</section>
 
-    <section>
-      <h2>Let’s Connect</h2>
+<main class="main-content">
 
-      <ul class="contact-list">
-        <li>
-          <i class="fa-solid fa-envelope"></i>
-          <strong>Email:</strong>
-          <a href="mailto:cctemateu@gmail.com">cctemateu@gmail.com</a>
-        </li>
-
-        <li>
-          <i class="fa-brands fa-github"></i>
-          <strong>GitHub:</strong>
-          <a href="https://github.com/cyprientemateu" target="_blank">
-            github.com/cyprientemateu
-          </a>
-        </li>
-
-        <li>
-          <i class="fa-brands fa-linkedin"></i>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/cctemateu/" target="_blank">
-            linkedin.com/in/cctemateu
-          </a>
-        </li>
-      </ul>
-
-      <!-- Resume Button -->
-      <a
-        class="resume-button"
-        href="Cyprien_Temateu_Resume.pdf"
-        target="_blank"
-        download
-      >
-        <i class="fa-solid fa-file-arrow-down"></i>
-        Download Resume (PDF)
-      </a>
-    </section>
-
-    <hr />
-
-    <!-- CONTACT FORM -->
-    <section>
-      <h2>Send Me a Message</h2>
-
-      <form
-        class="contact-form"
-        action="mailto:cctemateu@gmail.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <input
-          type="text"
-          name="Name"
-          placeholder="Your Name"
-          required
-        />
-
-        <input
-          type="email"
-          name="Email"
-          placeholder="Your Email"
-          required
-        />
-
-        <textarea
-          name="Message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit">
-          <i class="fa-solid fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
-    </section>
-
-  </main>
-
-  <!-- SCROLL TO TOP -->
-  <button id="scrollTopBtn" title="Back to top">↑</button>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <h3>Connect with Me</h3>
-
-    <div class="footer-links">
-      <a href="https://github.com/cyprientemateu" target="_blank" class="footer-btn github">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-
-      <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="footer-btn docker">
-        <i class="fa-brands fa-docker"></i> DockerHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="footer-btn linkedin">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
+  <!-- CONTACT INFO -->
+  <section class="skills-section">
+    <div class="section-header">
+      <h2 class="section-title">Contact Information</h2>
+      <p class="section-subtitle">Let’s connect and build something impactful</p>
     </div>
 
-    <p class="copyright">
-      © 2026 Cyprien Temateu | DevOps Portfolio
-    </p>
-  </footer>
+    <div class="skills-grid">
 
-  <!-- SHARED SCRIPT -->
-  <script>
-    // Scroll to top
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => {
-      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-    scrollBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+      <!-- Email -->
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">📧</span>
+          <h3 class="skill-category-title">Email</h3>
+        </div>
+        <p>
+          <a href="mailto:cctemateu@gmail.com" class="social-link">
+            cctemateu@gmail.com
+          </a>
+        </p>
+      </div>
 
-    // Dark / Light Mode
-    const toggle = document.getElementById("themeToggle");
-    toggle.onclick = () => {
-      document.body.classList.toggle("dark");
-      toggle.textContent =
-        document.body.classList.contains("dark") ? "☀️" : "🌙";
-    };
-  </script>
+      <!-- GitHub -->
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">💻</span>
+          <h3 class="skill-category-title">GitHub</h3>
+        </div>
+        <a href="https://github.com/cyprientemateu" target="_blank" class="cert-badge">
+          View Repositories
+        </a>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">💼</span>
+          <h3 class="skill-category-title">LinkedIn</h3>
+        </div>
+        <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="cert-badge">
+          View Profile
+        </a>
+      </div>
+
+      <!-- Resume -->
+      <div class="skill-category">
+        <div class="skill-category-header">
+          <span class="skill-category-icon">📄</span>
+          <h3 class="skill-category-title">Resume</h3>
+        </div>
+        <a href="Cyprien_Temateu_Resume.pdf" target="_blank" download class="cert-badge">
+          Download Resume (PDF)
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="skills-section">
+    <div class="section-header">
+      <h2 class="section-title">Send Me a Message</h2>
+      <p class="section-subtitle">I usually respond within 24 hours</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+
+        <form
+          action="mailto:cctemateu@gmail.com"
+          method="POST"
+          enctype="text/plain"
+          class="contact-form"
+        >
+          <input type="text" name="Name" placeholder="Your Name" required />
+          <input type="email" name="Email" placeholder="Your Email" required />
+          <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+
+          <button type="submit" class="cert-badge">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <h3 class="footer-title">Connect with Me</h3>
+    <div class="social-links">
+      <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
+      <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
+      <a href="https://linkedin.com/in/cctemateu/" target="_blank" class="social-link">LinkedIn</a>
+    </div>
+    <p class="footer-text">&copy; 2026 Cyprien Temateu | DevOps Portfolio</p>
+  </div>
+</footer>
 
 </body>
 </html>

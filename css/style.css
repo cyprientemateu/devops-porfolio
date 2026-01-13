@@ -128,70 +128,36 @@ header nav a.active {
   margin-bottom: 10px;
 }
 
-/* ================= CONTACT PAGE ================= */
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 30px auto;
-  max-width: 500px;
-  text-align: left;
+/* ---------------- CONTACT CARDS ---------------- */
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(102, 217, 239, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.contact-list li {
-  margin-bottom: 15px;
-  font-size: 1rem;
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: #66d9ef;
+  box-shadow: 0 15px 40px rgba(102, 217, 239, 0.2);
 }
 
-.contact-list i {
-  margin-right: 8px;
-  color: var(--accent);
-}
-
-.resume-button {
+.contact-card a {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: var(--accent);
-  color: white;
-  border-radius: 6px;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #66d9ef, #a6e22e);
+  color: #0e0e0e;
+  border-radius: 20px;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform .2s ease, opacity .2s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.resume-button:hover {
+.contact-card a:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
   opacity: 0.9;
 }
 

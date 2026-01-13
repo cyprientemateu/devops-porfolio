@@ -1,55 +1,55 @@
-// Theme toggle
-const toggleBtn = document.getElementById("themeToggle");
-const currentTheme = localStorage.getItem("theme");
-
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-}
-
-toggleBtn.addEventListener("click", () => {
-  let theme = document.documentElement.getAttribute("data-theme");
-  let newTheme = theme === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-});
-
-// Scroll to top
-const scrollBtn = document.getElementById("scrollTopBtn");
-
-window.addEventListener("scroll", () => {
-  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-});
-
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
 // ================= THEME TOGGLE =================
 const themeToggle = document.getElementById("themeToggle");
+
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  document.body.classList.toggle("dark", savedTheme === "dark");
+  themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+}
+
+// Toggle theme on click
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  const isDark = document.body.classList.contains("dark");
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
 // ================= SCROLL TO TOP =================
 const scrollTopBtn = document.getElementById("scrollTopBtn");
-window.onscroll = () => {
+
+window.addEventListener("scroll", () => {
   scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-};
-scrollTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+});
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// ================= FADE-IN OBSERVER FUNCTION =================
+function createFadeInObserver(selector) {
+  const elements = document.querySelectorAll(selector);
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elements.forEach(el => observer.observe(el));
+}
 
 // ================= SKILL BLOCK FADE-IN =================
-const skillBlocks = document.querySelectorAll(".skill-block");
+createFadeInObserver(".skill-block");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+// ================= PROJECT CARD FADE-IN =================
+createFadeInObserver(".project-card");
 
-skillBlocks.forEach(block => observer.observe(block));
+// ================= CONTACT CARD FADE-IN =================
+createFadeInObserver(".contact-card");
