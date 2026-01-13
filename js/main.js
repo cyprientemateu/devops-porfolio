@@ -53,3 +53,9 @@ createFadeInObserver(".project-card");
 
 // ================= CONTACT CARD FADE-IN =================
 createFadeInObserver(".contact-card");
+
+// Mobile Sidebar Toggle
+function toggleSidebar() {
+  const nav = document.querySelector('.nav-links');
+  nav.classList.toggle('active');
+}

@@ -4,20 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact • Cyprien Temateu</title>
-  <meta name="description" content="Contact DevOps Engineer Cyprien Temateu">
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Contact Cyprien Temateu, DevOps Engineer. Get in touch for projects, collaboration, or consulting.">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header class="header-nav">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">Cyprien Temateu</a>
@@ -27,112 +19,52 @@
       <a href="skills.html" class="nav-link">Skills</a>
       <a href="contact.html" class="nav-link active">Contact</a>
     </nav>
-    <button class="mobile-menu-btn">☰</button>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero-section">
-  <div class="hero-container">
-    <h1 class="hero-title">Get in Touch</h1>
-    <p class="hero-subtitle">
-      Collaboration • DevOps Opportunities • Cloud Engineering Roles
-    </p>
-  </div>
+  <h1 class="hero-title">Get in Touch</h1>
+  <p class="hero-subtitle">I am open to DevOps opportunities, collaboration, or consulting. Reach out via email, phone, or the form below.</p>
 </section>
 
 <main class="main-content">
-
-  <!-- CONTACT INFO -->
-  <section class="skills-section">
+  <section class="contact-section">
     <div class="section-header">
-      <h2 class="section-title">Contact Information</h2>
-      <p class="section-subtitle">Let’s connect and build something impactful</p>
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-subtitle">Fill out the form or use the contact details below.</p>
     </div>
 
-    <div class="skills-grid">
-
-      <!-- Email -->
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">📧</span>
-          <h3 class="skill-category-title">Email</h3>
-        </div>
-        <p>
-          <a href="mailto:cctemateu@gmail.com" class="social-link">
-            cctemateu@gmail.com
-          </a>
-        </p>
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Contact Details</h3>
+        <p><strong>Name:</strong> Cyprien Carlos Temateu</p>
+        <p><strong>Phone:</strong> 832-416-6594</p>
+        <p><strong>Email:</strong> <a href="mailto:cyprien.temateu@yahoo.com">cyprien.temateu@yahoo.com</a></p>
+        <p><strong>Service Area:</strong> Kaufman, Rockwall County</p>
       </div>
 
-      <!-- GitHub -->
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">💻</span>
-          <h3 class="skill-category-title">GitHub</h3>
-        </div>
-        <a href="https://github.com/cyprientemateu" target="_blank" class="cert-badge">
-          View Repositories
-        </a>
-      </div>
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="mailto:cyprien.temateu@yahoo.com" method="POST" enctype="text/plain">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name">
 
-      <!-- LinkedIn -->
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">💼</span>
-          <h3 class="skill-category-title">LinkedIn</h3>
-        </div>
-        <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="cert-badge">
-          View Profile
-        </a>
-      </div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Your Email">
 
-      <!-- Resume -->
-      <div class="skill-category">
-        <div class="skill-category-header">
-          <span class="skill-category-icon">📄</span>
-          <h3 class="skill-category-title">Resume</h3>
-        </div>
-        <a href="Cyprien_Temateu_Resume.pdf" target="_blank" download class="cert-badge">
-          Download Resume (PDF)
-        </a>
-      </div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
 
-    </div>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section class="skills-section">
-    <div class="section-header">
-      <h2 class="section-title">Send Me a Message</h2>
-      <p class="section-subtitle">I usually respond within 24 hours</p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-category">
-
-        <form
-          action="mailto:cctemateu@gmail.com"
-          method="POST"
-          enctype="text/plain"
-          class="contact-form"
-        >
-          <input type="text" name="Name" placeholder="Your Name" required />
-          <input type="email" name="Email" placeholder="Your Email" required />
-          <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-
-          <button type="submit" class="cert-badge">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
+          <button type="submit" class="btn-submit">Send Message</button>
         </form>
-
       </div>
     </div>
   </section>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-content">
     <h3 class="footer-title">Connect with Me</h3>
@@ -145,5 +77,6 @@
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
