@@ -65,9 +65,12 @@
     .resume-icon { font-size:4rem; color:#a6e22e; margin-bottom:1.5rem; }
     .resume-title { color:#66d9ef; font-size:2rem; font-weight:600; margin-bottom:1rem; }
     .resume-description { color:#f0f0f0; opacity:0.85; margin-bottom:2rem; font-size:1.1rem; line-height:1.6; }
+    .resume-buttons { display:flex; gap:1.5rem; justify-content:center; }
     .resume-button { display:inline-flex; align-items:center; gap:0.8rem; padding:1.2rem 2.5rem; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-size:1.1rem; font-weight:600; text-decoration:none; border-radius:25px; transition:all 0.3s ease; box-shadow:0 5px 20px rgba(102,217,239,0.3); }
     .resume-button:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(102,217,239,0.5); }
     .resume-button i { font-size:1.3rem; }
+    .resume-button-secondary { background:rgba(255,255,255,0.05); border:2px solid #66d9ef; color:#66d9ef; }
+    .resume-button-secondary:hover { background:rgba(102,217,239,0.1); border-color:#a6e22e; color:#a6e22e; }
 
     .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top:1px solid rgba(102,217,239,0.2); padding:3rem 0 2rem; text-align:center; margin-top:5rem; }
     .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
@@ -98,6 +101,7 @@
       <a href="index.html" class="nav-logo">Cyprien Temateu</a>
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link">Projects</a>
         <a href="skills.html" class="nav-link">Skills</a>
         <a href="contact.html" class="nav-link active">Contact</a>
@@ -140,7 +144,7 @@
             <i class="fa-brands fa-github"></i>
           </div>
           <h3 class="connect-card-title">GitHub</h3>
-          <div class="connect-card-link">github.com/cyprientemateu</div>
+          <div class="connect-card-link">cyprientemateu</div>
           <p class="connect-card-description">Explore my code repositories, DevOps projects, and open-source contributions.</p>
         </a>
 
@@ -150,7 +154,7 @@
             <i class="fa-brands fa-linkedin"></i>
           </div>
           <h3 class="connect-card-title">LinkedIn</h3>
-          <div class="connect-card-link">linkedin.com/in/cctemateu</div>
+          <div class="connect-card-link">cctemateu</div>
           <p class="connect-card-description">Connect with me professionally and stay updated on my career journey.</p>
         </a>
 
@@ -160,25 +164,8 @@
             <i class="fa-brands fa-docker"></i>
           </div>
           <h3 class="connect-card-title">DockerHub</h3>
-          <div class="connect-card-link">hub.docker.com/u/cyprientemateu</div>
+          <div class="connect-card-link">cyprientemateu</div>
           <p class="connect-card-description">Check out my Docker images and containerized applications.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section class="resume-section">
-      <div class="resume-container">
-        <div class="resume-icon">
-          <i class="fa-solid fa-file-pdf"></i>
-        </div>
-        <h2 class="resume-title">Download My Resume</h2>
-        <p class="resume-description">
-          Get a comprehensive overview of my skills, experience, certifications, and professional background in DevOps and Cloud Infrastructure.
-        </p>
-        <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
-          <i class="fa-solid fa-file-arrow-down"></i>
-          Download Resume (PDF)
         </a>
       </div>
     </section>
@@ -215,6 +202,29 @@
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
           </form>
+        </div>
+      </div>
+    </section>
+
+     <!-- Resume Section -->
+    <section class="resume-section">
+      <div class="resume-container">
+        <div class="resume-icon">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h2 class="resume-title">Download My Resume</h2>
+        <p class="resume-description">
+          Get a comprehensive overview of my skills, experience, certifications, and professional background in DevOps and Cloud Infrastructure.
+        </p>
+        <div class="resume-buttons">
+          <a class="resume-button resume-button-secondary" href="Cyprien_Temateu_Resume.pdf" target="_blank">
+            <i class="fa-solid fa-eye"></i>
+            View Resume PDF
+          </a>
+          <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
+            <i class="fa-solid fa-file-arrow-down"></i>
+            Download Resume PDF
+          </a>
         </div>
       </div>
     </section>

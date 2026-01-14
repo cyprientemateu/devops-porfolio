@@ -22,8 +22,8 @@
 
     .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
     .hero-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-    .hero-image { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #66d9ef; box-shadow: 0 10px 40px rgba(102,217,239,0.4); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(102,217,239,0.2), rgba(166,226,46,0.2)); }
-    .hero-image i { font-size: 5rem; color: #66d9ef; }
+    .hero-image { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #66d9ef; box-shadow: 0 10px 40px rgba(102,217,239,0.4); overflow: hidden; background: linear-gradient(135deg, rgba(102,217,239,0.2), rgba(166,226,46,0.2)); display: flex; align-items: center; justify-content: center; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:0.5rem; }
     .hero-subtitle { font-size:1.3rem; color:#a6e22e; opacity:0.9; font-weight: 600; margin-bottom: 0.5rem; }
     .hero-location { font-size:1.1rem; color:#f0f0f0; opacity:0.7; display: flex; align-items: center; gap: 0.5rem; justify-content: center; }
@@ -70,6 +70,7 @@
     .cta-button:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(102,217,239,0.4); }
     .cta-button-secondary { background:rgba(255,255,255,0.05); border:2px solid #66d9ef; color:#66d9ef; }
     .cta-button-secondary:hover { background:rgba(102,217,239,0.1); border-color:#a6e22e; color:#a6e22e; }
+    .cert-badge { background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; padding:0.5rem 1rem; border-radius:20px; font-size:0.8rem; font-weight:600; display:inline-block; }
 
     .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top:1px solid rgba(102,217,239,0.2); padding:3rem 0 2rem; text-align:center; margin-top:5rem; }
     .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
@@ -114,7 +115,7 @@
   <section class="hero-section">
     <div class="hero-content">
       <div class="hero-image">
-        <i class="fa-solid fa-user-tie"></i>
+        <img src="images/nice_office.jpg" alt="Cyprien Temateu">
       </div>
       <div>
         <h1 class="hero-title">Cyprien Temateu</h1>
@@ -211,6 +212,9 @@
           <p class="journey-description">
             Completed Cisco's comprehensive networking certification, mastering routing, switching, VLSM, IP addressing, and hands-on labs with Cisco Packet Tracer. This deepened my understanding of network infrastructure fundamentals essential for cloud deployments.
           </p>
+          <span class="cert-badge">Issued Dec 2023</span><br><br>
+          <a href="https://www.credly.com/badges/53968ba5-36e3-45ee-b14a-d14933bec2c1"
+             target="_blank" class="cert-badge">Show Credential</a>
         </div>
 
         <div class="journey-item">
@@ -222,6 +226,9 @@
           <p class="journey-description">
             Earned AWS SAA certification, validating expertise in cloud architecture, EC2, VPC, IAM, S3, Route 53, scalability, high availability, security best practices, and cost optimization strategies.
           </p>
+          <span class="cert-badge">Issued Aug 2023 · Expires Aug 2026</span><br><br>
+          <a href="https://www.credly.com/badges/af799368-f161-40cf-8e72-ba5cbd05502b"
+             target="_blank" class="cert-badge">Show Credential</a>
         </div>
 
         <div class="journey-item">
@@ -233,6 +240,9 @@
           <p class="journey-description">
             Achieved CKA certification from The Linux Foundation, demonstrating proficiency in Kubernetes administration, cluster operations, scheduling, networking, security policies, troubleshooting, and SRE fundamentals.
           </p>
+          <span class="cert-badge">Issued Jul 2023 · Expires Jul 2026</span><br><br>
+          <a href="https://www.credly.com/badges/dff66350-cdfb-4f33-a8b4-c7ff85ee8fda"
+             target="_blank" class="cert-badge">Show Credential</a>
         </div>
 
         <div class="journey-item">
@@ -244,6 +254,12 @@
           <p class="journey-description">
             Mastered GitOps workflows with ArgoCD and advanced Terraform techniques through LinkedIn Learning certifications. Enhanced skills in declarative Kubernetes configuration, CI/CD automation, and infrastructure as code at scale.
           </p>
+          <span class="cert-badge">Advanced Terraform: Issued Fev 2024 · GitOps with ArgoCD: Issued June 2024</span><br><br>
+          <a href="https://www.linkedin.com/learning/certificates/4e8d94ea26f1f7419690de7adef318ebe1aadb31e5e5adb9d54cc7353aa365dc"
+             target="_blank" class="cert-badge">Show Credential</a>
+          &nbsp;&nbsp;
+          <a href="https://www.linkedin.com/learning/certificates/85fbd3f2ec424e02176d42e93b80f67021224619a07476efc331c73ab7649fca"
+             target="_blank" class="cert-badge">Show Credential</a>   
         </div>
 
         <div class="journey-item">
@@ -314,6 +330,34 @@
         <div class="tech-item">
           <i class="fa-solid fa-chart-line"></i>
           <div class="tech-name">CloudWatch</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-docker"></i>
+          <div class="tech-name">Docker Compose</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-terminal"></i>
+          <div class="tech-name">Bash Scripting</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-chart-bar"></i>
+          <div class="tech-name">Prometheus</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-chart-area"></i>
+          <div class="tech-name">Grafana</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <div class="tech-name">SonarQube</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-linux"></i>
+          <div class="tech-name">Linux</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-windows"></i>
+          <div class="tech-name">Windows</div>
         </div>
       </div>
     </section>

@@ -6,6 +6,8 @@
   <title>Home • Cyprien Temateu</title>
   <meta name="description" content="DevOps portfolio of Cyprien Temateu, showcasing skills, projects, and experience.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%); color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
@@ -18,36 +20,103 @@
     .nav-link.active { color: #a6e22e; background: rgba(166,226,46,0.1); }
     .mobile-menu-btn { display: none; background: none; border: none; color: #66d9ef; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
 
-    .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
-    .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
-    .hero-subtitle { font-size:1.3rem; color:#f0f0f0; opacity:0.9; max-width:700px; margin:0 auto; }
+    /* Hero Section - Main Landing */
+    .hero-section { 
+      padding: 150px 0 100px; 
+      background: linear-gradient(135deg, rgba(14,14,14,0.92), rgba(26,26,26,0.92)), url('images/hero-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align:center; 
+      min-height: 80vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(14,14,14,0.5) 100%);
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; text-align: left; }
+    .hero-text { }
+    .hero-image-container { display: flex; justify-content: center; align-items: center; }
+    .hero-profile-image { width: 320px; height: 320px; border-radius: 50%; border: 5px solid #66d9ef; box-shadow: 0 15px 60px rgba(102,217,239,0.5); object-fit: cover; transition: all 0.3s ease; }
+    .hero-profile-image:hover { transform: scale(1.05); box-shadow: 0 20px 80px rgba(102,217,239,0.7); }
+    .hero-greeting { font-size: 1.3rem; color: #a6e22e; font-weight: 600; margin-bottom: 1rem; opacity: 0.9; }
+    .hero-title { font-size: 4rem; font-weight: 700; color: #66d9ef; margin-bottom: 1.5rem; line-height: 1.2; }
+    .hero-title-highlight { color: #a6e22e; }
+    .hero-subtitle { font-size: 1.4rem; color: #f0f0f0; opacity: 0.85; margin-bottom: 3rem; line-height: 1.8; }
+    .hero-cta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .cta-button { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #66d9ef, #a6e22e); color: #0e0e0e; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(102,217,239,0.3); }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(102,217,239,0.5); }
+    .cta-button-secondary { background: rgba(255,255,255,0.05); border: 2px solid #66d9ef; color: #66d9ef; }
+    .cta-button-secondary:hover { background: rgba(102,217,239,0.1); border-color: #a6e22e; color: #a6e22e; }
 
     .main-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .skills-section { padding:5rem 0; }
-    .section-header { text-align:center; margin-bottom:3rem; }
-    .section-title { font-size:2.5rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
-    .section-subtitle { font-size:1.2rem; color:#f0f0f0; opacity:0.8; max-width:700px; margin:0 auto; }
+    
+    /* Quick Stats Section */
+    .stats-section { padding: 5rem 0; background: rgba(255,255,255,0.02); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+    .stat-item { text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(102,217,239,0.2); border-radius: 15px; transition: all 0.3s ease; }
+    .stat-item:hover { transform: translateY(-5px); border-color: #66d9ef; box-shadow: 0 15px 40px rgba(102,217,239,0.2); }
+    .stat-number { font-size: 3rem; font-weight: 700; color: #a6e22e; margin-bottom: 0.5rem; }
+    .stat-label { font-size: 1.1rem; color: #f0f0f0; opacity: 0.8; }
 
-    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; margin-bottom:4rem; }
-    .skill-category { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; transition: all 0.3s ease; }
-    .skill-category:hover { transform: translateY(-5px); border-color:#66d9ef; box-shadow:0 15px 40px rgba(102,217,239,0.2); }
-    .skill-category-header { display:flex; align-items:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid rgba(102,217,239,0.2); }
-    .skill-category-icon { font-size:1.5rem; margin-right:1rem; color:#a6e22e; }
-    .skill-category-title { color:#66d9ef; font-size:1.3rem; font-weight:600; }
-    .skill-item { margin-bottom:1rem; padding:1rem; background: rgba(255,255,255,0.03); border-radius:10px; border:1px solid rgba(102,217,239,0.1); }
-    .skill-item:last-child { margin-bottom:0; }
-    .skill-name { font-weight:600; color:#f0f0f0; font-size:1rem; }
+    /* Featured Sections */
+    .featured-section { padding: 5rem 0; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-title { font-size: 2.5rem; font-weight: 700; color: #66d9ef; margin-bottom: 1rem; }
+    .section-subtitle { font-size: 1.2rem; color: #f0f0f0; opacity: 0.8; max-width: 700px; margin: 0 auto; }
 
-    .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top:1px solid rgba(102,217,239,0.2); padding:3rem 0 2rem; text-align:center; margin-top:5rem; }
-    .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
-    .footer-title { color:#66d9ef; font-size:1.5rem; font-weight:600; margin-bottom:1rem; }
-    .social-links { display:flex; justify-content:center; gap:2rem; margin-bottom:2rem; }
-    .social-link { color:#f0f0f0; text-decoration:none; font-weight:500; padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease; background: rgba(255,255,255,0.05); }
-    .social-link:hover { color:#66d9ef; background: rgba(102,217,239,0.1); transform:translateY(-2px); }
-    .footer-text { color:#f0f0f0; opacity:0.7; font-size:0.9rem; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .feature-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(102,217,239,0.2); border-radius: 15px; padding: 2.5rem 2rem; text-align: center; transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-8px); border-color: #66d9ef; box-shadow: 0 15px 40px rgba(102,217,239,0.25); }
+    .feature-icon { font-size: 3.5rem; color: #a6e22e; margin-bottom: 1.5rem; }
+    .feature-title { color: #66d9ef; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .feature-description { color: #f0f0f0; opacity: 0.85; line-height: 1.7; margin-bottom: 1.5rem; }
+    .feature-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #66d9ef; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+    .feature-link:hover { color: #a6e22e; gap: 0.8rem; }
 
-    @media (max-width:768px) { .nav-links{display:none;} .mobile-menu-btn{display:block;} .skills-grid{grid-template-columns:1fr;} }
-    @media (max-width:480px) { .main-content{padding:0 1rem;} .hero-title{font-size:2rem;} .section-title{font-size:2rem;} }
+    /* Recent Work Preview */
+    .work-preview { background: rgba(255,255,255,0.05); border: 1px solid rgba(102,217,239,0.2); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; transition: all 0.3s ease; }
+    .work-preview:hover { transform: translateX(10px); border-color: #a6e22e; box-shadow: 0 10px 30px rgba(102,217,239,0.2); }
+    .work-title { color: #66d9ef; font-size: 1.4rem; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+    .work-description { color: #f0f0f0; opacity: 0.85; line-height: 1.7; }
+    .work-tags { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
+    .work-tag { background: rgba(102,217,239,0.1); color: #66d9ef; padding: 0.4rem 1rem; border-radius: 15px; font-size: 0.85rem; border: 1px solid rgba(102,217,239,0.2); }
+
+    .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(102,217,239,0.2); padding: 3rem 0 2rem; text-align: center; margin-top: 5rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .footer-title { color: #66d9ef; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+    .social-link { color: #f0f0f0; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s ease; background: rgba(255,255,255,0.05); }
+    .social-link:hover { color: #66d9ef; background: rgba(102,217,239,0.1); transform: translateY(-2px); }
+    .footer-text { color: #f0f0f0; opacity: 0.7; font-size: 0.9rem; }
+
+    @media (max-width:768px) { 
+      .nav-links{display:none;} 
+      .mobile-menu-btn{display:block;} 
+      .hero-title{font-size:2.5rem;} 
+      .hero-content{grid-template-columns:1fr; gap:2rem; text-align:center;}
+      .hero-text{order:2;}
+      .hero-image-container{order:1;}
+      .hero-profile-image{width:220px; height:220px;}
+      .hero-cta{justify-content:center;}
+      .stats-grid{grid-template-columns:repeat(2, 1fr);}
+      .features-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:480px) { 
+      .main-content{padding:0 1rem;} 
+      .hero-title{font-size:2rem;} 
+      .section-title{font-size:2rem;} 
+      .stats-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -68,46 +137,208 @@
 
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-container">
-      <h1 class="hero-title">Welcome to My DevOps Portfolio</h1>
-      <p class="hero-subtitle">I'm Cyprien Temateu, specializing in cloud infrastructure, CI/CD, containers, and DevSecOps.</p>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <h1 class="hero-title">
+          Cyprien <span class="hero-title-highlight">Temateu</span>
+        </h1>
+        <p class="hero-subtitle">
+          DevOps Engineer specializing in cloud infrastructure, automation, and container orchestration. 
+          I transform complex technical challenges into elegant, scalable solutions.
+        </p>
+        <div class="hero-cta">
+          <a href="projects.html" class="cta-button">
+            <i class="fa-solid fa-rocket"></i>
+            View My Work
+          </a>
+          <a href="contact.html" class="cta-button cta-button-secondary">
+            <i class="fa-solid fa-envelope"></i>
+            Get In Touch
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img src="images/nice_office.jpg" alt="Cyprien Temateu" class="hero-profile-image">
+      </div>
     </div>
   </section>
 
-  <main class="main-content">
-    <section class="skills-section">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">I build reliable and automated DevOps solutions, from cloud deployments to monitoring and security.</p>
+  <!-- Quick Stats -->
+  <section class="stats-section">
+    <div class="main-content">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
       </div>
-      
-      <div class="skills-grid">
-        <div class="skill-category">
-          <div class="skill-category-header">
-            <span class="skill-category-icon">⚙️</span>
-            <h3 class="skill-category-title">DevOps Focus</h3>
+    </div>
+  </section>
+
+  <!-- What I Do Section -->
+  <main class="main-content">
+    <section class="featured-section">
+      <div class="section-header">
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-subtitle">Core expertise in modern DevOps practices and cloud technologies</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-cloud"></i>
           </div>
-          <div class="skill-item"><span class="skill-name">CI/CD Pipelines</span></div>
-          <div class="skill-item"><span class="skill-name">Automation & Scripting</span></div>
-          <div class="skill-item"><span class="skill-name">Cloud Infrastructure</span></div>
+          <h3 class="feature-title">Cloud Architecture</h3>
+          <p class="feature-description">
+            Design and deploy scalable AWS infrastructure with high availability, security best practices, and cost optimization.
+          </p>
+          <a href="skills.html" class="feature-link">
+            Explore Skills
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
 
-        <div class="skill-category">
-          <div class="skill-category-header">
-            <span class="skill-category-icon">📂</span>
-            <h3 class="skill-category-title">Portfolio Highlights</h3>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-arrows-spin"></i>
           </div>
-          <div class="skill-item"><span class="skill-name">AWS & Terraform Deployments</span></div>
-          <div class="skill-item"><span class="skill-name">Docker & Kubernetes Projects</span></div>
-          <div class="skill-item"><span class="skill-name">GitHub Actions CI/CD</span></div>
+          <h3 class="feature-title">CI/CD Automation</h3>
+          <p class="feature-description">
+            Build robust pipelines with Jenkins and GitHub Actions to streamline development and deployment workflows.
+          </p>
+          <a href="projects.html" class="feature-link">
+            View Projects
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-brands fa-docker"></i>
+          </div>
+          <h3 class="feature-title">Container Orchestration</h3>
+          <p class="feature-description">
+            Expert in Docker and Kubernetes for managing microservices architectures and implementing GitOps with ArgoCD.
+          </p>
+          <a href="about.html" class="feature-link">
+            Learn More
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-section">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Recent work showcasing DevOps expertise</p>
+      </div>
+
+      <div class="work-preview">
+        <h3 class="work-title">
+          <i class="fa-solid fa-server"></i>
+          AWS Auto-Decommission System
+        </h3>
+        <p class="work-description">
+          Automated cost-optimization solution using Lambda, CloudWatch, and Terraform to detect and safely terminate idle AWS resources, resulting in significant infrastructure cost savings.
+        </p>
+        <div class="work-tags">
+          <span class="work-tag">AWS Lambda</span>
+          <span class="work-tag">Terraform</span>
+          <span class="work-tag">Python</span>
+          <span class="work-tag">CloudWatch</span>
+        </div>
+      </div>
+
+      <div class="work-preview">
+        <h3 class="work-title">
+          <i class="fa-solid fa-dharmachakra"></i>
+          Kubernetes Platform with EKS
+        </h3>
+        <p class="work-description">
+          Secure, production-ready Kubernetes platform built on AWS EKS with GitOps deployment using ArgoCD, complete monitoring, and automated infrastructure provisioning.
+        </p>
+        <div class="work-tags">
+          <span class="work-tag">Amazon EKS</span>
+          <span class="work-tag">Kubernetes</span>
+          <span class="work-tag">ArgoCD</span>
+          <span class="work-tag">Terraform</span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="projects.html" class="cta-button">
+          <i class="fa-solid fa-folder-open"></i>
+          View All Projects
+        </a>
+      </div>
+    </section>
+
+    <!-- Certifications Highlight -->
+    <section class="featured-section">
+      <div class="section-header">
+        <h2 class="section-title">Certifications & Credentials</h2>
+        <p class="section-subtitle">Industry-recognized certifications validating expertise</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-brands fa-aws"></i>
+          </div>
+          <h3 class="feature-title">AWS Solutions Architect</h3>
+          <p class="feature-description">
+            Certified in cloud architecture, scalability, high availability, and security best practices.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-dharmachakra"></i>
+          </div>
+          <h3 class="feature-title">Kubernetes Administrator</h3>
+          <p class="feature-description">
+            CKA certified in cluster operations, networking, security policies, and troubleshooting.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="feature-title">CCNA Networking</h3>
+          <p class="feature-description">
+            Cisco certified in networking fundamentals, routing, switching, and network infrastructure.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="skills.html" class="cta-button cta-button-secondary">
+          <i class="fa-solid fa-certificate"></i>
+          View All Certifications
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
-      <h3 class="footer-title">Connect with Me</h3>
+      <h3 class="footer-title">Let's Connect</h3>
       <div class="social-links">
         <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
         <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
