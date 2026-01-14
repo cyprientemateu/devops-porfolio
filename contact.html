@@ -50,19 +50,22 @@
     .contact-form button { padding:1rem; border:none; border-radius:10px; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-weight:600; font-size:1rem; cursor:pointer; transition:all 0.3s ease; }
     .contact-form button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(102,217,239,0.3); }
 
-    /* Contact Links Section */
-    .connect-section { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2.5rem; margin-bottom:3rem; text-align:center; }
-    .connect-title { color:#66d9ef; font-size:2rem; font-weight:600; margin-bottom:2rem; }
-    .contact-list { list-style:none; padding:0; margin:0 0 2rem 0; max-width:600px; margin-left:auto; margin-right:auto; }
-    .contact-list li { display:flex; align-items:center; gap:1rem; padding:1rem 1.5rem; margin-bottom:1rem; background: rgba(255,255,255,0.03); border-radius:10px; border:1px solid rgba(102,217,239,0.1); transition:all 0.3s ease; }
-    .contact-list li:hover { transform:translateX(5px); border-color:#66d9ef; background: rgba(102,217,239,0.05); }
-    .contact-list li i { font-size:1.5rem; color:#a6e22e; min-width:30px; text-align:center; }
-    .contact-list li strong { color:#a6e22e; min-width:80px; }
-    .contact-list li a { color:#66d9ef; text-decoration:none; transition:all 0.3s ease; flex:1; }
-    .contact-list li a:hover { color:#f0f0f0; }
+    /* Connect Cards Grid */
+    .connect-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+    .connect-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; text-align:center; transition: all 0.3s ease; text-decoration:none; display:block; }
+    .connect-card:hover { transform: translateY(-5px); border-color:#66d9ef; box-shadow:0 15px 40px rgba(102,217,239,0.2); }
+    .connect-card-icon { font-size:3rem; color:#a6e22e; margin-bottom:1rem; }
+    .connect-card-title { color:#66d9ef; font-size:1.3rem; font-weight:600; margin-bottom:0.8rem; }
+    .connect-card-link { color:#f0f0f0; font-size:1rem; margin-bottom:1rem; display:block; text-decoration:none; }
+    .connect-card-description { color:#f0f0f0; opacity:0.8; font-size:0.95rem; line-height:1.6; }
 
-    /* Resume Button */
-    .resume-button { display:inline-flex; align-items:center; gap:0.8rem; padding:1rem 2rem; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-size:1.1rem; font-weight:600; text-decoration:none; border-radius:25px; transition:all 0.3s ease; box-shadow:0 5px 20px rgba(102,217,239,0.3); }
+    /* Resume Section */
+    .resume-section { padding:5rem 0; background: rgba(255,255,255,0.02); }
+    .resume-container { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:3rem; text-align:center; max-width:600px; margin:0 auto; }
+    .resume-icon { font-size:4rem; color:#a6e22e; margin-bottom:1.5rem; }
+    .resume-title { color:#66d9ef; font-size:2rem; font-weight:600; margin-bottom:1rem; }
+    .resume-description { color:#f0f0f0; opacity:0.85; margin-bottom:2rem; font-size:1.1rem; line-height:1.6; }
+    .resume-button { display:inline-flex; align-items:center; gap:0.8rem; padding:1.2rem 2.5rem; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-size:1.1rem; font-weight:600; text-decoration:none; border-radius:25px; transition:all 0.3s ease; box-shadow:0 5px 20px rgba(102,217,239,0.3); }
     .resume-button:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(102,217,239,0.5); }
     .resume-button i { font-size:1.3rem; }
 
@@ -78,14 +81,13 @@
       .nav-links{display:none;} 
       .mobile-menu-btn{display:block;} 
       .skills-grid{grid-template-columns:1fr;} 
-      .contact-list li { flex-direction:column; text-align:center; }
-      .contact-list li strong { min-width:auto; }
+      .connect-grid{grid-template-columns:1fr;}
     }
     @media (max-width:480px) { 
       .main-content{padding:0 1rem;} 
       .hero-title{font-size:2rem;} 
       .section-title{font-size:2rem;} 
-      .connect-section{padding:1.5rem;}
+      .resume-container{padding:2rem 1.5rem;}
     }
   </style>
 </head>
@@ -115,53 +117,77 @@
   <main class="main-content">
     
     <!-- Let's Connect Section -->
-    <section class="connect-section">
-      <h2 class="connect-title">Let's Connect</h2>
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Find me on these platforms and let's start a conversation</p>
+      </div>
 
-      <ul class="contact-list">
-        <li>
-          <i class="fa-solid fa-envelope"></i>
-          <strong>Email:</strong>
-          <a href="mailto:cctemateu@gmail.com">cctemateu@gmail.com</a>
-        </li>
+      <div class="connect-grid">
+        <!-- Email Card -->
+        <a href="mailto:cyprien.temateu@yahoo.com" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3 class="connect-card-title">Email</h3>
+          <div class="connect-card-link">cyprien.temateu@yahoo.com</div>
+          <p class="connect-card-description">Send me a direct email for project inquiries, collaborations, or any questions.</p>
+        </a>
 
-        <li>
-          <i class="fa-brands fa-github"></i>
-          <strong>GitHub:</strong>
-          <a href="https://github.com/cyprientemateu" target="_blank">
-            github.com/cyprientemateu
-          </a>
-        </li>
+        <!-- GitHub Card -->
+        <a href="https://github.com/cyprientemateu" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <h3 class="connect-card-title">GitHub</h3>
+          <div class="connect-card-link">github.com/cyprientemateu</div>
+          <p class="connect-card-description">Explore my code repositories, DevOps projects, and open-source contributions.</p>
+        </a>
 
-        <li>
-          <i class="fa-brands fa-linkedin"></i>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/cctemateu/" target="_blank">
-            linkedin.com/in/cctemateu
-          </a>
-        </li>
+        <!-- LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+          <h3 class="connect-card-title">LinkedIn</h3>
+          <div class="connect-card-link">linkedin.com/in/cctemateu</div>
+          <p class="connect-card-description">Connect with me professionally and stay updated on my career journey.</p>
+        </a>
 
-        <li>
-          <i class="fa-brands fa-docker"></i>
-          <strong>DockerHub:</strong>
-          <a href="https://hub.docker.com/u/cyprientemateu" target="_blank">
-            hub.docker.com/u/cyprientemateu
-          </a>
-        </li>
-      </ul>
+        <!-- DockerHub Card -->
+        <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-docker"></i>
+          </div>
+          <h3 class="connect-card-title">DockerHub</h3>
+          <div class="connect-card-link">hub.docker.com/u/cyprientemateu</div>
+          <p class="connect-card-description">Check out my Docker images and containerized applications.</p>
+        </a>
+      </div>
+    </section>
 
-      <!-- Resume Button -->
-      <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
-        <i class="fa-solid fa-file-arrow-down"></i>
-        Download Resume (PDF)
-      </a>
+    <!-- Resume Section -->
+    <section class="resume-section">
+      <div class="resume-container">
+        <div class="resume-icon">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h2 class="resume-title">Download My Resume</h2>
+        <p class="resume-description">
+          Get a comprehensive overview of my skills, experience, certifications, and professional background in DevOps and Cloud Infrastructure.
+        </p>
+        <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
+          <i class="fa-solid fa-file-arrow-down"></i>
+          Download Resume (PDF)
+        </a>
+      </div>
     </section>
 
     <!-- Contact Form Section -->
     <section class="skills-section">
       <div class="section-header">
         <h2 class="section-title">Send a Message</h2>
-        <p class="section-subtitle">Or use the contact form below to reach out directly.</p>
+        <p class="section-subtitle">Or use the contact form below to reach out directly</p>
       </div>
       
       <div class="skills-grid">
@@ -173,8 +199,8 @@
           </div>
           <div class="contact-item"><strong>Name:</strong> Cyprien Carlos Temateu</div>
           <div class="contact-item"><strong>Phone:</strong> 832-416-6594</div>
-          <div class="contact-item"><strong>Email:</strong> <a href="mailto:cctemateu@gmail.com">cctemateu@gmail.com</a></div>
-          <div class="contact-item"><strong>Service Area:</strong> Cloud Infrastructure, DevOps Automation, CI/CD, Kubernetes</div>
+          <div class="contact-item"><strong>Email:</strong> <a href="mailto:cyprien.temateu@yahoo.com">cyprien.temateu@yahoo.com</a></div>
+          <div class="contact-item"><strong>Service Area:</strong> Kaufman & Rockwall County</div>
         </div>
 
         <!-- Contact Form -->
@@ -186,7 +212,6 @@
           <form action="mailto:cyprien.temateu@yahoo.com" method="POST" enctype="text/plain" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <input type="subject" name="subject" placeholder="Subject" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
           </form>
