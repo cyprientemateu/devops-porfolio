@@ -1,168 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contact | Cyprien Temateu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact • Cyprien Temateu</title>
+  <meta name="description" content="Contact Cyprien Temateu for DevOps projects or consulting.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%); color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
+    .header-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(102,217,239,0.2); z-index: 1000; padding: 1rem 0; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: #66d9ef; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-link { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 20px; }
+    .nav-link:hover { color: #66d9ef; background: rgba(102,217,239,0.1); }
+    .nav-link.active { color: #a6e22e; background: rgba(166,226,46,0.1); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: #66d9ef; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+    .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
+    .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
+    .hero-subtitle { font-size:1.3rem; color:#f0f0f0; opacity:0.9; max-width:700px; margin:0 auto; }
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+    .main-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .skills-section { padding:5rem 0; }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-title { font-size:2.5rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
+    .section-subtitle { font-size:1.2rem; color:#f0f0f0; opacity:0.8; max-width:600px; margin:0 auto; }
+
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; margin-bottom:3rem; }
+    .skill-category { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; transition: all 0.3s ease; }
+    .skill-category:hover { transform: translateY(-5px); border-color:#66d9ef; box-shadow:0 15px 40px rgba(102,217,239,0.2); }
+    .skill-category-header { display:flex; align-items:center; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(102,217,239,0.2); }
+    .skill-category-icon { font-size:1.5rem; margin-right:1rem; color:#a6e22e; }
+    .skill-category-title { color:#66d9ef; font-size:1.3rem; font-weight:600; }
+    
+    .contact-item { margin-bottom:1rem; padding:1rem; background: rgba(255,255,255,0.03); border-radius:10px; border:1px solid rgba(102,217,239,0.1); }
+    .contact-item:last-child { margin-bottom:0; }
+    .contact-item strong { color:#a6e22e; margin-right:0.5rem; }
+    .contact-item a { color:#66d9ef; text-decoration:none; transition:all 0.3s ease; }
+    .contact-item a:hover { color:#a6e22e; text-decoration:underline; }
+    
+    .contact-form { display:flex; flex-direction:column; gap:1rem; }
+    .contact-form input, .contact-form textarea { padding:0.8rem; border-radius:10px; border:1px solid rgba(102,217,239,0.2); background:rgba(255,255,255,0.05); color:#f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1rem; transition:all 0.3s ease; }
+    .contact-form input:focus, .contact-form textarea:focus { outline:none; border-color:#66d9ef; background:rgba(255,255,255,0.08); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color:#f0f0f0; opacity:0.5; }
+    .contact-form button { padding:1rem; border:none; border-radius:10px; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-weight:600; font-size:1rem; cursor:pointer; transition:all 0.3s ease; }
+    .contact-form button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(102,217,239,0.3); }
+
+    /* Connect Cards Grid */
+    .connect-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+    .connect-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; text-align:center; transition: all 0.3s ease; text-decoration:none; display:block; }
+    .connect-card:hover { transform: translateY(-5px); border-color:#66d9ef; box-shadow:0 15px 40px rgba(102,217,239,0.2); }
+    .connect-card-icon { font-size:3rem; color:#a6e22e; margin-bottom:1rem; }
+    .connect-card-title { color:#66d9ef; font-size:1.3rem; font-weight:600; margin-bottom:0.8rem; }
+    .connect-card-link { color:#f0f0f0; font-size:1rem; margin-bottom:1rem; display:block; text-decoration:none; }
+    .connect-card-description { color:#f0f0f0; opacity:0.8; font-size:0.95rem; line-height:1.6; }
+
+    /* Resume Section */
+    .resume-section { padding:5rem 0; background: rgba(255,255,255,0.02); }
+    .resume-container { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:3rem; text-align:center; max-width:600px; margin:0 auto; }
+    .resume-icon { font-size:4rem; color:#a6e22e; margin-bottom:1.5rem; }
+    .resume-title { color:#66d9ef; font-size:2rem; font-weight:600; margin-bottom:1rem; }
+    .resume-description { color:#f0f0f0; opacity:0.85; margin-bottom:2rem; font-size:1.1rem; line-height:1.6; }
+    .resume-button { display:inline-flex; align-items:center; gap:0.8rem; padding:1.2rem 2.5rem; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-size:1.1rem; font-weight:600; text-decoration:none; border-radius:25px; transition:all 0.3s ease; box-shadow:0 5px 20px rgba(102,217,239,0.3); }
+    .resume-button:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(102,217,239,0.5); }
+    .resume-button i { font-size:1.3rem; }
+
+    .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top:1px solid rgba(102,217,239,0.2); padding:3rem 0 2rem; text-align:center; margin-top:5rem; }
+    .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
+    .footer-title { color:#66d9ef; font-size:1.5rem; font-weight:600; margin-bottom:1rem; }
+    .social-links { display:flex; justify-content:center; gap:2rem; margin-bottom:2rem; }
+    .social-link { color:#f0f0f0; text-decoration:none; font-weight:500; padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease; background: rgba(255,255,255,0.05); }
+    .social-link:hover { color:#66d9ef; background: rgba(102,217,239,0.1); transform:translateY(-2px); }
+    .footer-text { color:#f0f0f0; opacity:0.7; font-size:0.9rem; }
+
+    @media (max-width:768px) { 
+      .nav-links{display:none;} 
+      .mobile-menu-btn{display:block;} 
+      .skills-grid{grid-template-columns:1fr;} 
+      .connect-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:480px) { 
+      .main-content{padding:0 1rem;} 
+      .hero-title{font-size:2rem;} 
+      .section-title{font-size:2rem;} 
+      .resume-container{padding:2rem 1.5rem;}
+    }
+  </style>
 </head>
+<body>
 
-<body class="theme-contact light">
-
-  <!-- THEME TOGGLE -->
-  <button id="themeToggle" aria-label="Toggle Dark Mode">
-    🌙
-  </button>
-
-  <!-- HEADER -->
-  <header>
-    <h1>Contact</h1>
-    <p class="subtitle">Let’s Connect • Collaboration • Opportunities</p>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a class="active" href="contact.html">Contact</a>
-    </nav>
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Cyprien Temateu</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">Get in Touch</h1>
+      <p class="hero-subtitle">I'm open to opportunities, collaborations, or consulting. Reach out using the form below or my contact details.</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Let’s Connect</h2>
+  <main class="main-content">
+    
+    <!-- Let's Connect Section -->
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Find me on these platforms and let's start a conversation</p>
+      </div>
 
-      <ul class="contact-list">
-        <li>
-          <i class="fa-solid fa-envelope"></i>
-          <strong>Email:</strong>
-          <a href="mailto:cctemateu@gmail.com">cctemateu@gmail.com</a>
-        </li>
+      <div class="connect-grid">
+        <!-- Email Card -->
+        <a href="mailto:cyprien.temateu@yahoo.com" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3 class="connect-card-title">Email</h3>
+          <div class="connect-card-link">cyprien.temateu@yahoo.com</div>
+          <p class="connect-card-description">Send me a direct email for project inquiries, collaborations, or any questions.</p>
+        </a>
 
-        <li>
-          <i class="fa-brands fa-github"></i>
-          <strong>GitHub:</strong>
-          <a href="https://github.com/cyprientemateu" target="_blank">
-            github.com/cyprientemateu
-          </a>
-        </li>
+        <!-- GitHub Card -->
+        <a href="https://github.com/cyprientemateu" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <h3 class="connect-card-title">GitHub</h3>
+          <div class="connect-card-link">github.com/cyprientemateu</div>
+          <p class="connect-card-description">Explore my code repositories, DevOps projects, and open-source contributions.</p>
+        </a>
 
-        <li>
-          <i class="fa-brands fa-linkedin"></i>
-          <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/cctemateu/" target="_blank">
-            linkedin.com/in/cctemateu
-          </a>
-        </li>
-      </ul>
+        <!-- LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+          <h3 class="connect-card-title">LinkedIn</h3>
+          <div class="connect-card-link">linkedin.com/in/cctemateu</div>
+          <p class="connect-card-description">Connect with me professionally and stay updated on my career journey.</p>
+        </a>
 
-      <!-- Resume Button -->
-      <a
-        class="resume-button"
-        href="Cyprien_Temateu_Resume.pdf"
-        target="_blank"
-        download
-      >
-        <i class="fa-solid fa-file-arrow-down"></i>
-        Download Resume (PDF)
-      </a>
+        <!-- DockerHub Card -->
+        <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="connect-card">
+          <div class="connect-card-icon">
+            <i class="fa-brands fa-docker"></i>
+          </div>
+          <h3 class="connect-card-title">DockerHub</h3>
+          <div class="connect-card-link">hub.docker.com/u/cyprientemateu</div>
+          <p class="connect-card-description">Check out my Docker images and containerized applications.</p>
+        </a>
+      </div>
     </section>
 
-    <hr />
-
-    <!-- CONTACT FORM -->
-    <section>
-      <h2>Send Me a Message</h2>
-
-      <form
-        class="contact-form"
-        action="mailto:cctemateu@gmail.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <input
-          type="text"
-          name="Name"
-          placeholder="Your Name"
-          required
-        />
-
-        <input
-          type="email"
-          name="Email"
-          placeholder="Your Email"
-          required
-        />
-
-        <textarea
-          name="Message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit">
-          <i class="fa-solid fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
+    <!-- Resume Section -->
+    <section class="resume-section">
+      <div class="resume-container">
+        <div class="resume-icon">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h2 class="resume-title">Download My Resume</h2>
+        <p class="resume-description">
+          Get a comprehensive overview of my skills, experience, certifications, and professional background in DevOps and Cloud Infrastructure.
+        </p>
+        <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
+          <i class="fa-solid fa-file-arrow-down"></i>
+          Download Resume (PDF)
+        </a>
+      </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">Send a Message</h2>
+        <p class="section-subtitle">Or use the contact form below to reach out directly</p>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Contact Info -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <span class="skill-category-icon">📞</span>
+            <h3 class="skill-category-title">Contact Details</h3>
+          </div>
+          <div class="contact-item"><strong>Name:</strong> Cyprien Carlos Temateu</div>
+          <div class="contact-item"><strong>Phone:</strong> 832-416-6594</div>
+          <div class="contact-item"><strong>Email:</strong> <a href="mailto:cyprien.temateu@yahoo.com">cyprien.temateu@yahoo.com</a></div>
+          <div class="contact-item"><strong>Service Area:</strong> Kaufman & Rockwall County</div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <span class="skill-category-icon">✉️</span>
+            <h3 class="skill-category-title">Quick Message</h3>
+          </div>
+          <form action="mailto:cyprien.temateu@yahoo.com" method="POST" enctype="text/plain" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- SCROLL TO TOP -->
-  <button id="scrollTopBtn" title="Back to top">↑</button>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <h3>Connect with Me</h3>
-
-    <div class="footer-links">
-      <a href="https://github.com/cyprientemateu" target="_blank" class="footer-btn github">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-
-      <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="footer-btn docker">
-        <i class="fa-brands fa-docker"></i> DockerHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/cctemateu/" target="_blank" class="footer-btn linkedin">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-title">Connect with Me</h3>
+      <div class="social-links">
+        <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
+        <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
+        <a href="https://linkedin.com/in/cctemateu/" target="_blank" class="social-link">LinkedIn</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Cyprien Temateu | DevOps Portfolio</p>
     </div>
-
-    <p class="copyright">
-      © 2026 Cyprien Temateu | DevOps Portfolio
-    </p>
   </footer>
 
-  <!-- SHARED SCRIPT -->
   <script>
-    // Scroll to top
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => {
-      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    };
-    scrollBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    // Dark / Light Mode
-    const toggle = document.getElementById("themeToggle");
-    toggle.onclick = () => {
-      document.body.classList.toggle("dark");
-      toggle.textContent =
-        document.body.classList.contains("dark") ? "☀️" : "🌙";
-    };
+    function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebar-overlay').classList.toggle('active');}
+    function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebar-overlay').classList.remove('active');}
+    document.querySelectorAll('.sidebar-nav-item').forEach(link=>{link.addEventListener('click',closeSidebar);});
   </script>
 
 </body>
