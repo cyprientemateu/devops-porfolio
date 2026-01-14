@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About • Cyprien Temateu</title>
+  <meta name="description" content="Learn about Cyprien Temateu - DevOps Engineer specializing in cloud infrastructure, automation, and container orchestration.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%); color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
+    .header-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(102,217,239,0.2); z-index: 1000; padding: 1rem 0; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: #66d9ef; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-link { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: all 0.3s ease; padding: 0.5rem 1rem; border-radius: 20px; }
+    .nav-link:hover { color: #66d9ef; background: rgba(102,217,239,0.1); }
+    .nav-link.active { color: #a6e22e; background: rgba(166,226,46,0.1); }
+    .mobile-menu-btn { display: none; background: none; border: none; color: #66d9ef; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+
+    .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
+    .hero-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    .hero-image { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #66d9ef; box-shadow: 0 10px 40px rgba(102,217,239,0.4); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(102,217,239,0.2), rgba(166,226,46,0.2)); }
+    .hero-image i { font-size: 5rem; color: #66d9ef; }
+    .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:0.5rem; }
+    .hero-subtitle { font-size:1.3rem; color:#a6e22e; opacity:0.9; font-weight: 600; margin-bottom: 0.5rem; }
+    .hero-location { font-size:1.1rem; color:#f0f0f0; opacity:0.7; display: flex; align-items: center; gap: 0.5rem; justify-content: center; }
+
+    .main-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .skills-section { padding:5rem 0; }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-title { font-size:2.5rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
+    .section-subtitle { font-size:1.2rem; color:#f0f0f0; opacity:0.8; max-width:800px; margin:0 auto; line-height: 1.8; }
+
+    .intro-section { max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:3rem; margin-bottom: 5rem; }
+    .intro-text { font-size: 1.15rem; line-height: 1.9; color: #f0f0f0; opacity: 0.9; margin-bottom: 1.5rem; }
+    .intro-text:last-child { margin-bottom: 0; }
+
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+    .skill-category { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; transition: all 0.3s ease; text-align: center; }
+    .skill-category:hover { transform: translateY(-5px); border-color:#66d9ef; box-shadow:0 15px 40px rgba(102,217,239,0.2); }
+    .skill-category-icon { font-size:3rem; color:#a6e22e; margin-bottom:1rem; }
+    .skill-category-title { color:#66d9ef; font-size:1.3rem; font-weight:600; margin-bottom:1rem; }
+    .skill-category-text { color:#f0f0f0; opacity:0.85; font-size:1rem; line-height:1.7; }
+
+    /* Journey Timeline */
+    .journey-container { max-width: 900px; margin: 0 auto; }
+    .journey-item { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:2rem; margin-bottom:2rem; border-left: 4px solid #66d9ef; transition: all 0.3s ease; }
+    .journey-item:hover { transform: translateX(10px); border-left-color: #a6e22e; box-shadow:0 10px 30px rgba(102,217,239,0.2); }
+    .journey-year { color:#a6e22e; font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .journey-title { color:#66d9ef; font-size:1.4rem; font-weight:600; margin-bottom:0.8rem; }
+    .journey-description { color:#f0f0f0; opacity:0.85; line-height:1.7; }
+
+    /* Tech Stack */
+    .tech-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:1.5rem; }
+    .tech-item { background: rgba(255,255,255,0.05); border:1px solid rgba(102,217,239,0.2); border-radius:12px; padding:1.5rem 1rem; text-align:center; transition: all 0.3s ease; }
+    .tech-item:hover { transform: translateY(-3px); border-color:#a6e22e; background: rgba(166,226,46,0.05); }
+    .tech-item i { font-size:2.5rem; color:#66d9ef; margin-bottom:0.8rem; }
+    .tech-name { color:#f0f0f0; font-weight:600; font-size:0.95rem; }
+
+    /* CTA Section */
+    .cta-section { padding:5rem 0; background: rgba(255,255,255,0.02); }
+    .cta-container { max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border:1px solid rgba(102,217,239,0.2); border-radius:15px; padding:3rem; text-align:center; }
+    .cta-title { color:#66d9ef; font-size:2rem; font-weight:600; margin-bottom:1.5rem; }
+    .cta-text { color:#f0f0f0; opacity:0.85; font-size:1.1rem; margin-bottom:2rem; line-height:1.8; }
+    .cta-buttons { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; }
+    .cta-button { display:inline-flex; align-items:center; gap:0.8rem; padding:1rem 2rem; background:linear-gradient(135deg,#66d9ef,#a6e22e); color:#0e0e0e; font-size:1rem; font-weight:600; text-decoration:none; border-radius:25px; transition:all 0.3s ease; }
+    .cta-button:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(102,217,239,0.4); }
+    .cta-button-secondary { background:rgba(255,255,255,0.05); border:2px solid #66d9ef; color:#66d9ef; }
+    .cta-button-secondary:hover { background:rgba(102,217,239,0.1); border-color:#a6e22e; color:#a6e22e; }
+
+    .footer { background: rgba(14,14,14,0.95); backdrop-filter: blur(10px); border-top:1px solid rgba(102,217,239,0.2); padding:3rem 0 2rem; text-align:center; margin-top:5rem; }
+    .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
+    .footer-title { color:#66d9ef; font-size:1.5rem; font-weight:600; margin-bottom:1rem; }
+    .social-links { display:flex; justify-content:center; gap:2rem; margin-bottom:2rem; }
+    .social-link { color:#f0f0f0; text-decoration:none; font-weight:500; padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease; background: rgba(255,255,255,0.05); }
+    .social-link:hover { color:#66d9ef; background: rgba(102,217,239,0.1); transform:translateY(-2px); }
+    .footer-text { color:#f0f0f0; opacity:0.7; font-size:0.9rem; }
+
+    @media (max-width:768px) { 
+      .nav-links{display:none;} 
+      .mobile-menu-btn{display:block;} 
+      .skills-grid{grid-template-columns:1fr;} 
+      .tech-grid{grid-template-columns:repeat(auto-fit, minmax(120px,1fr));}
+      .cta-buttons{flex-direction:column;}
+    }
+    @media (max-width:480px) { 
+      .main-content{padding:0 1rem;} 
+      .hero-title{font-size:2rem;} 
+      .section-title{font-size:2rem;} 
+      .intro-section{padding:2rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Cyprien Temateu</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-image">
+        <i class="fa-solid fa-user-tie"></i>
+      </div>
+      <div>
+        <h1 class="hero-title">Cyprien Temateu</h1>
+        <p class="hero-subtitle">DevOps Engineer | Cloud Architect | Automation Enthusiast</p>
+        <p class="hero-location">
+          <i class="fa-solid fa-location-dot"></i>
+          DFW, Dallas, Texas
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    
+    <!-- Who I Am Section -->
+    <section class="skills-section">
+      <div class="intro-section">
+        <p class="intro-text">
+          Hello! I'm Cyprien Temateu, a passionate DevOps Engineer dedicated to building reliable, scalable, and automated infrastructure solutions. With expertise spanning cloud platforms, containerization, CI/CD pipelines, and infrastructure as code, I transform complex technical challenges into elegant, efficient systems.
+        </p>
+        <p class="intro-text">
+          My journey in technology is driven by a commitment to continuous learning and innovation. I believe in the power of automation to streamline workflows, enhance security, and deliver exceptional value to businesses and end-users alike.
+        </p>
+        <p class="intro-text">
+          Based in DFW, Dallas, Texas, I bring hands-on experience with AWS, Kubernetes, Terraform, Docker, and modern DevOps practices to every project I undertake. Whether it's architecting cloud infrastructure, implementing GitOps workflows, or optimizing CI/CD pipelines, I approach each challenge with creativity, precision, and a focus on results.
+        </p>
+      </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-subtitle">Core areas of expertise and services I provide</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-category-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3 class="skill-category-title">Cloud Infrastructure</h3>
+          <p class="skill-category-text">
+            Design and deploy scalable AWS solutions using EC2, S3, VPC, IAM, Route 53, and more. I architect high-availability systems with cost optimization and security best practices at the core.
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <h3 class="skill-category-title">CI/CD Automation</h3>
+          <p class="skill-category-text">
+            Build robust, automated pipelines using Jenkins and GitHub Actions. I streamline development workflows, reduce deployment times, and ensure consistent, reliable releases.
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon">
+            <i class="fa-brands fa-docker"></i>
+          </div>
+          <h3 class="skill-category-title">Container Orchestration</h3>
+          <p class="skill-category-text">
+            Expert in Docker and Kubernetes for containerizing applications and managing complex microservices architectures. I implement GitOps with ArgoCD for declarative deployments.
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="skill-category-title">Infrastructure as Code</h3>
+          <p class="skill-category-text">
+            Leverage Terraform and Ansible to automate infrastructure provisioning and configuration management. I create reusable, version-controlled infrastructure that scales effortlessly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Journey Section -->
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">Key milestones and achievements in my DevOps career</p>
+      </div>
+
+      <div class="journey-container">
+        <div class="journey-item">
+          <div class="journey-year">
+            <i class="fa-solid fa-calendar-check"></i>
+            December 2024
+          </div>
+          <h3 class="journey-title">CCNA: Introduction to Networks</h3>
+          <p class="journey-description">
+            Completed Cisco's comprehensive networking certification, mastering routing, switching, VLSM, IP addressing, and hands-on labs with Cisco Packet Tracer. This deepened my understanding of network infrastructure fundamentals essential for cloud deployments.
+          </p>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-year">
+            <i class="fa-solid fa-certificate"></i>
+            August 2023
+          </div>
+          <h3 class="journey-title">AWS Certified Solutions Architect – Associate</h3>
+          <p class="journey-description">
+            Earned AWS SAA certification, validating expertise in cloud architecture, EC2, VPC, IAM, S3, Route 53, scalability, high availability, security best practices, and cost optimization strategies.
+          </p>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-year">
+            <i class="fa-solid fa-dharmachakra"></i>
+            July 2023
+          </div>
+          <h3 class="journey-title">Certified Kubernetes Administrator (CKA)</h3>
+          <p class="journey-description">
+            Achieved CKA certification from The Linux Foundation, demonstrating proficiency in Kubernetes administration, cluster operations, scheduling, networking, security policies, troubleshooting, and SRE fundamentals.
+          </p>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-year">
+            <i class="fa-solid fa-code-branch"></i>
+            June 2024
+          </div>
+          <h3 class="journey-title">GitOps & Advanced Infrastructure</h3>
+          <p class="journey-description">
+            Mastered GitOps workflows with ArgoCD and advanced Terraform techniques through LinkedIn Learning certifications. Enhanced skills in declarative Kubernetes configuration, CI/CD automation, and infrastructure as code at scale.
+          </p>
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-year">
+            <i class="fa-solid fa-project-diagram"></i>
+            Ongoing
+          </div>
+          <h3 class="journey-title">Real-World DevOps Projects</h3>
+          <p class="journey-description">
+            Continuously building and deploying production-ready projects including automated AWS resource decommissioning systems, Kubernetes platforms with EKS, Terraform-based infrastructure automation, and enterprise network designs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="skills-section">
+      <div class="section-header">
+        <h2 class="section-title">Technologies I Work With</h2>
+        <p class="section-subtitle">A snapshot of my technical toolkit</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <i class="fa-brands fa-aws"></i>
+          <div class="tech-name">AWS</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-docker"></i>
+          <div class="tech-name">Docker</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-dharmachakra"></i>
+          <div class="tech-name">Kubernetes</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-cube"></i>
+          <div class="tech-name">Terraform</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-jenkins"></i>
+          <div class="tech-name">Jenkins</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-github"></i>
+          <div class="tech-name">GitHub Actions</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-server"></i>
+          <div class="tech-name">Ansible</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-python"></i>
+          <div class="tech-name">Python</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-brands fa-git-alt"></i>
+          <div class="tech-name">Git</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div class="tech-name">DevSecOps</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <div class="tech-name">ArgoCD</div>
+        </div>
+        <div class="tech-item">
+          <i class="fa-solid fa-chart-line"></i>
+          <div class="tech-name">CloudWatch</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2 class="cta-title">Let's Build Something Great Together</h2>
+        <p class="cta-text">
+          I'm always open to discussing new projects, opportunities, or partnerships. Whether you need cloud infrastructure, automation solutions, or DevOps consulting, I'm here to help transform your ideas into reality.
+        </p>
+        <div class="cta-buttons">
+          <a href="projects.html" class="cta-button">
+            <i class="fa-solid fa-folder-open"></i>
+            View My Projects
+          </a>
+          <a href="skills.html" class="cta-button cta-button-secondary">
+            <i class="fa-solid fa-code"></i>
+            See My Skills
+          </a>
+          <a href="contact.html" class="cta-button">
+            <i class="fa-solid fa-envelope"></i>
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3 class="footer-title">Connect with Me</h3>
+      <div class="social-links">
+        <a href="https://github.com/cyprientemateu" target="_blank" class="social-link">GitHub</a>
+        <a href="https://hub.docker.com/u/cyprientemateu" target="_blank" class="social-link">DockerHub</a>
+        <a href="https://linkedin.com/in/cctemateu/" target="_blank" class="social-link">LinkedIn</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Cyprien Temateu | DevOps Portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebar-overlay').classList.toggle('active');}
+    function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebar-overlay').classList.remove('active');}
+    document.querySelectorAll('.sidebar-nav-item').forEach(link=>{link.addEventListener('click',closeSidebar);});
+  </script>
+
+</body>
+</html>
