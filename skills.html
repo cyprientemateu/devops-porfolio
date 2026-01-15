@@ -19,7 +19,25 @@
     .nav-link.active { color: #a6e22e; background: rgba(166,226,46,0.1); }
     .mobile-menu-btn { display: none; background: none; border: none; color: #66d9ef; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
 
-    .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
+    .hero-section { 
+      padding: 120px 0 80px; 
+      background: linear-gradient(135deg, rgba(14,14,14,0.92), rgba(26,26,26,0.92)), url('images/hero-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align:center;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(14,14,14,0.5) 100%);
+    }
+    .hero-container { position: relative; z-index: 1; }
     .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
     .hero-subtitle { font-size:1.3rem; color:#f0f0f0; opacity:0.9; max-width:600px; margin:0 auto; }
 
@@ -80,7 +98,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Background Image -->
   <section class="hero-section">
     <div class="hero-container">
       <h1 class="hero-title">Technical Skills & Expertise</h1>
@@ -207,7 +225,7 @@
           GitOps workflows, ArgoCD deployments, continuous delivery,
           declarative Kubernetes configuration, and CI/CD automation.
         </p>
-        <span class="cert-badge">Issued Jun 2024</span>
+        <span class="cert-badge">Issued Jun 2024</span><br><br>
         <a href="https://www.linkedin.com/learning/certificates/85fbd3f2ec424e02176d42e93b80f67021224619a07476efc331c73ab7649fca"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -220,7 +238,7 @@
           Infrastructure as Code (IaC), Terraform modules, state management,
           provisioning cloud infrastructure, and automation at scale.
         </p>
-        <span class="cert-badge">Issued Feb 2024</span>
+        <span class="cert-badge">Issued Feb 2024</span><br><br>
         <a href="https://www.linkedin.com/learning/certificates/4e8d94ea26f1f7419690de7adef318ebe1aadb31e5e5adb9d54cc7353aa365dc"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -233,7 +251,7 @@
           Networking fundamentals, routing and switching, VLSM,
           IP addressing, and hands-on labs using Cisco Packet Tracer.
         </p>
-        <span class="cert-badge">Issued Dec 2024</span>
+        <span class="cert-badge">Issued Dec 2024</span><br><br>
         <a href="https://www.credly.com/badges/53968ba5-36e3-45ee-b14a-d14933bec2c1"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -246,7 +264,7 @@
           Agile project management, Scrum workflows,
           Jira boards, sprint planning, and team collaboration.
         </p>
-        <span class="cert-badge">Issued Jul 2023</span>
+        <span class="cert-badge">Issued Jul 2023</span><br><br>
         <a href="https://www.coursera.org/account/accomplishments/verify/2Z3XM5QGU3HQ"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -259,7 +277,7 @@
           Agile leadership, Scrum ceremonies,
           stakeholder communication, and delivery-focused planning.
         </p>
-        <span class="cert-badge">Issued May 2023</span>
+        <span class="cert-badge">Issued May 2023</span><br><br>
         <a href="https://www.coursera.org/account/accomplishments/verify/P6YG4MN7NYMF"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -272,7 +290,7 @@
           Data analysis fundamentals including SQL, spreadsheets,
           data cleaning, and data visualization.
         </p>
-        <span class="cert-badge">Issued Sep 2022</span>
+        <span class="cert-badge">Issued Sep 2022</span><br><br>
         <a href="https://www.coursera.org/account/accomplishments/verify/35ZRCT7FAKEB"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
@@ -285,7 +303,7 @@
           Analytical thinking, data-driven decision making,
           business problem solving, and insights communication.
         </p>
-        <span class="cert-badge">Issued Sep 2022</span>
+        <span class="cert-badge">Issued Sep 2022</span><br><br>
         <a href="https://www.coursera.org/account/accomplishments/verify/HSSCX59RUWTR"
            target="_blank" class="cert-badge">Show Credential</a>
       </div>
