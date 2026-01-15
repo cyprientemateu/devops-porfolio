@@ -20,7 +20,25 @@
     .nav-link.active { color: #a6e22e; background: rgba(166,226,46,0.1); }
     .mobile-menu-btn { display: none; background: none; border: none; color: #66d9ef; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
 
-    .hero-section { padding: 120px 0 80px; background: linear-gradient(135deg, rgba(14,14,14,0.85), rgba(26,26,26,0.85)); text-align:center; }
+    .hero-section { 
+      padding: 120px 0 80px; 
+      background: linear-gradient(135deg, rgba(14,14,14,0.92), rgba(26,26,26,0.92)), url('images/contact-page-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align:center;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(14,14,14,0.5) 100%);
+    }
+    .hero-container { position: relative; z-index: 1; }
     .hero-title { font-size: 3rem; font-weight:700; color:#66d9ef; margin-bottom:1rem; }
     .hero-subtitle { font-size:1.3rem; color:#f0f0f0; opacity:0.9; max-width:700px; margin:0 auto; }
 
@@ -110,7 +128,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Background Image -->
   <section class="hero-section">
     <div class="hero-container">
       <h1 class="hero-title">Get in Touch</h1>
@@ -129,12 +147,12 @@
 
       <div class="connect-grid">
         <!-- Email Card -->
-        <a href="mailto:cyprien.temateu@yahoo.com" class="connect-card">
+        <a href="mailto:cctemateu@gmail.com" class="connect-card">
           <div class="connect-card-icon">
             <i class="fa-solid fa-envelope"></i>
           </div>
           <h3 class="connect-card-title">Email</h3>
-          <div class="connect-card-link">cyprien.temateu@yahoo.com</div>
+          <div class="connect-card-link">cctemateu@gmail.com</div>
           <p class="connect-card-description">Send me a direct email for project inquiries, collaborations, or any questions.</p>
         </a>
 
@@ -186,8 +204,8 @@
           </div>
           <div class="contact-item"><strong>Name:</strong> Cyprien Carlos Temateu</div>
           <div class="contact-item"><strong>Phone:</strong> 832-416-6594</div>
-          <div class="contact-item"><strong>Email:</strong> <a href="mailto:cyprien.temateu@yahoo.com">cyprien.temateu@yahoo.com</a></div>
-          <div class="contact-item"><strong>Service Area:</strong> Kaufman & Rockwall County</div>
+          <div class="contact-item"><strong>Email:</strong> <a href="mailto:cctemateu@gmail.com">cctemateu@gmail.com</a></div>
+          <div class="contact-item"><strong>Service Area:</strong> Dallas, Kaufman & Rockwall County</div>
         </div>
 
         <!-- Contact Form -->
@@ -196,7 +214,7 @@
             <span class="skill-category-icon">✉️</span>
             <h3 class="skill-category-title">Quick Message</h3>
           </div>
-          <form action="mailto:cyprien.temateu@yahoo.com" method="POST" enctype="text/plain" class="contact-form">
+          <form action="mailto:cctemateu@gmail.com" method="POST" enctype="text/plain" class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -219,11 +237,11 @@
         <div class="resume-buttons">
           <a class="resume-button resume-button-secondary" href="Cyprien_Temateu_Resume.pdf" target="_blank">
             <i class="fa-solid fa-eye"></i>
-            View Resume PDF
+            View Resume
           </a>
           <a class="resume-button" href="Cyprien_Temateu_Resume.pdf" target="_blank" download>
             <i class="fa-solid fa-file-arrow-down"></i>
-            Download Resume PDF
+            Download Resume
           </a>
         </div>
       </div>
